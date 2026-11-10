@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- Eva i Provence · Black Friday 2026 · Påmeldingsside.
      Kajabi: lim inn i en Custom Code-blokk. Bytt skjemaet med Kajabi-skjemaet (tagg bf26-registered).
-     Tilstand bytter etter norsk tid; ?state=before|live|closed for forhåndsvisning. -->
+     Bilder: last opp img/* til Kajabi og bytt src. Tilstand bytter etter norsk tid; ?state=before|live|closed for forhåndsvisning. -->
 <html lang="no">
 <head>
 <meta charset="utf-8">
@@ -12,212 +12,259 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;600&family=Sacramento&display=swap" rel="stylesheet">
 <style>
+/* Jul i Provence — festive Provence palette: cranberry red, pine green, gold on warm cream. */
 :root{
-  --milk:#FDF8EE; --sand:#F3E7CF; --stone:#EADFC6; --white:#FFFFFF;
-  --olive:#56622F; --sage:#A7AE95; --pine:#2F4A3A;
-  --night:#14303B; --night-2:#1C4250; --teal:#246C84; --teal-deep:#1C5568;
-  --terracotta:#B8552A; --terracotta-hover:#9E4520; --gold:#C9A04A; --gold-soft:#E9D3A0;
-  --ink:#33291F; --muted:#665D4E; --on-night:#F7EFDF; --on-night-muted:#CFC3AA;
-  --hair:rgba(51,41,31,.14); --hair-night:rgba(247,239,223,.18);
+  --cream:#FBF4E8; --paper:#FFFDF8; --linen:#F4E8D3; --white:#FFFFFF;
+  --red:#A3202A; --red-deep:#7A1720; --red-soft:#F6DEDB;
+  --green:#1E4636; --green-2:#2B5E48; --green-soft:#E4EDE4;
+  --gold:#C49A3E; --gold-2:#E3C77E; --gold-soft:#F3E6C4;
+  --ink:#2A2119; --muted:#685B4C; --on-dark:#FBF1E0; --on-dark-muted:#E4D5BA;
+  --hair:rgba(42,33,25,.13); --hair-dark:rgba(251,241,224,.2);
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Hanken Grotesk',-apple-system,'Segoe UI',Roboto,sans-serif;
   --script:'Sacramento',cursive;
-  --r-sm:10px; --r:16px; --r-lg:22px;
+  --r-sm:10px; --r:16px; --r-lg:24px;
   --s1:8px; --s2:12px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:72px; --s8:104px;
+  --shadow:0 24px 50px -28px rgba(60,20,10,.45);
   --dur:220ms; --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 html,body{max-width:100%;overflow-x:hidden}
-body{margin:0;background:var(--milk);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
+[hidden]{display:none!important}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
-h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0;letter-spacing:.003em;text-wrap:balance}
-h1{font-size:clamp(2.2rem,7.2vw,3.9rem)}
-h2{font-size:clamp(1.8rem,5vw,2.7rem)}
-h3{font-size:clamp(1.3rem,3.6vw,1.6rem)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.4rem,7.4vw,4.4rem)}
+h2{font-size:clamp(1.9rem,5vw,3rem)}
+h3{font-size:clamp(1.3rem,3.4vw,1.6rem)}
 p{margin:0 0 1em}
-.script{font-family:var(--script);font-weight:400;font-size:1.35em;line-height:.8;color:var(--gold)}
-.wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 20px}
-.narrow{max-width:720px;margin-left:auto;margin-right:auto}
+.script{font-family:var(--script);font-weight:400;font-size:1.32em;line-height:.7;color:var(--red)}
+.dark .script,.red .script{color:var(--gold-2)}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:740px;margin-left:auto;margin-right:auto}
 .center{text-align:center}
 .muted{color:var(--muted)}
-.eyebrow{font-weight:600;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin:0 0 var(--s2)}
-.sec{padding:clamp(56px,9vw,var(--s8)) 0}
-.sec-tight{padding:clamp(40px,6vw,var(--s7)) 0}
+.dark .muted,.red .muted{color:var(--on-dark-muted)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin:0 0 var(--s2)}
+.eyebrow::before,.eyebrow::after{content:"";width:22px;height:1px;background:currentColor;opacity:.6}
+.dark .eyebrow,.red .eyebrow{color:var(--gold-2)}
+.sec{padding:clamp(60px,9vw,var(--s8)) 0}
+.sec-tight{padding:clamp(44px,6vw,var(--s7)) 0}
+.head{margin:0 auto var(--s6);text-align:center;max-width:760px}
+.head p{margin:var(--s3) auto 0;max-width:600px}
 
-/* night hero */
-.night{background:radial-gradient(900px 500px at 50% -10%,var(--night-2),var(--night) 70%);color:var(--on-night)}
-.night h1,.night h2{color:var(--on-night)}
-.night .eyebrow{color:var(--gold-soft)}
-.night .muted{color:var(--on-night-muted)}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold-soft)}
-.badge.solid{background:var(--gold);color:var(--night);border-color:var(--gold)}
+/* surfaces */
+.dark{background:var(--green);color:var(--on-dark)}
+.dark h1,.dark h2,.dark h3{color:var(--on-dark)}
+.red{background:var(--red);color:var(--on-dark)}
+.red h1,.red h2,.red h3{color:var(--on-dark)}
+.paper{background:var(--paper)}
+.linen{background:var(--linen)}
+.pattern{background-color:var(--green);background-image:radial-gradient(rgba(227,199,126,.16) 1.2px,transparent 1.3px),radial-gradient(rgba(227,199,126,.1) 1.2px,transparent 1.3px);background-size:28px 28px;background-position:0 0,14px 14px}
+
+/* top ribbon (signature) */
+.ribbon-top{background:linear-gradient(90deg,var(--red-deep),var(--red) 30%,var(--red) 70%,var(--red-deep));color:var(--on-dark);text-align:center;font:600 .78rem/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:11px 16px;position:relative}
+.ribbon-top::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:6px;background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 20px);opacity:.7}
+.site-head{background:var(--paper);border-bottom:1px solid var(--hair)}
+.site-head .wrap{display:flex;align-items:center;justify-content:center;padding:18px 20px}
+.logo{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--green);text-decoration:none;letter-spacing:.01em}
+.logo em{font-style:normal;color:var(--red)}
+
+/* holly divider */
+.holly{display:block;width:120px;height:auto;margin:0 auto var(--s3)}
+.holly .lf{fill:var(--green-2)}.holly .bry{fill:var(--red)}.holly .ln{stroke:var(--gold);stroke-width:1.2}
+.dark .holly .lf,.red .holly .lf{fill:var(--gold-2)}
+.red .holly .bry{fill:var(--on-dark)}
+
+/* badges */
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--red-soft);color:var(--red-deep)}
+.badge.gold{background:#E2BF6C;color:#173829}
+.badge.green{background:var(--green-soft);color:var(--green)}
 .badge .dot{width:7px;height:7px;border-radius:50%;background:currentColor}
-
-/* wreath signature */
-.wreath{display:block;width:clamp(120px,26vw,170px);height:auto;margin:0 auto var(--s4)}
-.wreath .branch{stroke:var(--sage);fill:none;stroke-width:1.3;stroke-linecap:round}
-.wreath .leaf{fill:var(--sage)}
-.wreath .needle{stroke:#5E7D63;stroke-width:1.2;stroke-linecap:round}
-.wreath .berry{fill:var(--terracotta)}
-.wreath .flame{fill:var(--gold);transform-origin:50% 100%;animation:flicker 3.2s ease-in-out infinite}
-.wreath .candle{fill:var(--on-night)}
-@keyframes flicker{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.86) translateY(1px)}}
+.seal{width:118px;height:118px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#E9CF86,var(--gold) 60%,#9E7A2B);color:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 10px 24px -10px rgba(0,0,0,.45),inset 0 0 0 4px rgba(255,255,255,.25),inset 0 0 0 6px rgba(30,70,54,.25);transform:rotate(-8deg)}
+.seal b{font-family:var(--serif);font-size:1.7rem;line-height:1}
+.seal span{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:56px;padding:16px 30px;border-radius:999px;border:0;
-  background:var(--terracotta);color:var(--white);font-family:var(--sans);font-size:1.04rem;font-weight:600;text-decoration:none;cursor:pointer;
-  transition:background var(--dur) var(--ease),transform var(--dur) var(--ease)}
-.btn:hover{background:var(--terracotta-hover)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:56px;padding:16px 32px;border-radius:999px;border:0;background:var(--red);color:var(--white);
+  font-family:var(--sans);font-size:1.05rem;font-weight:600;text-decoration:none;cursor:pointer;box-shadow:0 10px 22px -12px rgba(122,23,32,.8);
+  transition:background var(--dur) var(--ease),transform var(--dur) var(--ease),box-shadow var(--dur)}
+.btn:hover{background:var(--red-deep);transform:translateY(-1px)}
 .btn:active{transform:translateY(1px)}
-.btn[disabled]{opacity:.55;cursor:not-allowed}
 .btn.block{width:100%}
-.btn.ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
-.btn.ghost:hover{background:var(--teal);color:var(--white)}
-.night .btn.ghost{color:var(--on-night);border-color:var(--hair-night)}
-.btn-note{font-size:.86rem;margin-top:var(--s2)}
+.btn.gold{background:#E2BF6C;color:#173829;box-shadow:0 10px 22px -12px rgba(120,90,20,.8)}
+.btn.gold:hover{background:var(--gold-2)}
+.btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green);box-shadow:none}
+.btn.ghost:hover{background:var(--green);color:var(--white)}
+.dark .btn.ghost,.red .btn.ghost{color:var(--on-dark);border-color:var(--hair-dark)}
 
 /* cards & forms */
-.card{background:var(--white);border:1px solid var(--hair);border-radius:var(--r-lg);padding:clamp(22px,4vw,34px)}
-.night .card{background:rgba(255,255,255,.06);border-color:var(--hair-night)}
+.card{background:var(--paper);border:1px solid var(--hair);border-radius:var(--r-lg);padding:clamp(22px,4vw,34px);box-shadow:var(--shadow);color:var(--ink)}
 .form{display:grid;gap:var(--s3);text-align:left}
 .field{display:grid;gap:6px}
-.field label{font-size:.9rem;font-weight:600}
+.field label{font-size:.9rem;font-weight:600;color:var(--ink)}
 .field .opt{font-weight:400;opacity:.75}
-.field input[type=text],.field input[type=email],.field input[type=tel]{width:100%;min-height:52px;padding:12px 16px;border-radius:var(--r-sm);
-  border:1.5px solid var(--stone);background:var(--white);color:var(--ink);font:inherit;transition:border-color var(--dur)}
-.field input:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px rgba(36,108,132,.2)}
-.field .err{display:none;font-size:.85rem;color:#A13A1B}
-.field.invalid input{border-color:#A13A1B}
+.field input{width:100%;min-height:52px;padding:12px 16px;border-radius:var(--r-sm);border:1.5px solid #E3D5BD;background:var(--white);color:var(--ink);font:inherit;transition:border-color var(--dur)}
+.field input:focus{border-color:var(--green-2);outline:none;box-shadow:0 0 0 3px rgba(43,94,72,.18)}
+.field .err{display:none;font-size:.85rem;color:var(--red)}
+.field.invalid input{border-color:var(--red)}
 .field.invalid .err{display:block}
-.check{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;cursor:pointer}
-.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--terracotta);flex:none}
-.night .field input{border-color:transparent}
-.night .field label,.night .check{color:var(--on-night)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;cursor:pointer;color:var(--ink);min-height:44px}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--red);flex:none}
+.fine{font-size:.84rem;color:var(--muted);margin:0;text-align:center}
+
+/* photo frames */
+.photo{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);background:var(--linen)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.polaroid{background:var(--white);padding:10px 10px 38px;border-radius:6px;box-shadow:var(--shadow);position:relative;margin:0}
+.polaroid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:3px}
+.polaroid figcaption{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:var(--script);font-size:1.6rem;color:var(--red);line-height:1}
+.tape::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;margin-left:-42px;background:rgba(163,32,42,.82);transform:rotate(-4deg);border-radius:2px;box-shadow:0 2px 4px rgba(0,0,0,.15);z-index:1}
 
 /* lists */
 .ticks{list-style:none;padding:0;margin:0;display:grid;gap:var(--s3)}
-.ticks li{display:grid;grid-template-columns:28px 1fr;gap:var(--s2);align-items:start}
-.ticks li::before{content:"";width:22px;height:22px;margin-top:3px;border-radius:50%;background:var(--sand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%236F7C3E' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.ticks li{display:grid;grid-template-columns:30px 1fr;gap:var(--s2);align-items:start}
+.ticks li::before{content:"";width:24px;height:24px;margin-top:2px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.dark .ticks li::before{background-color:var(--gold)}
 
 /* quotes */
-.quotes{display:grid;gap:var(--s3)}
-.quote{background:var(--white);border:1px solid var(--hair);border-radius:var(--r);padding:24px}
-.quote blockquote{margin:0 0 12px;font-family:var(--serif);font-style:italic;font-size:1.2rem;line-height:1.35}
-.quote .who{font-family:var(--serif);font-weight:600;color:var(--teal-deep);font-size:1.15rem}
-.quote .where{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.quotes{display:grid;gap:var(--s4)}
+.quote{background:var(--paper);border-radius:var(--r-lg);padding:28px;box-shadow:var(--shadow);position:relative;border-top:4px solid var(--red);margin:0;color:var(--ink)}
+.quote blockquote{margin:10px 0 14px;font-family:var(--serif);font-style:italic;font-size:1.25rem;line-height:1.35}
+.quote .who{font-family:var(--serif);font-weight:600;color:var(--green);font-size:1.2rem}
+.quote .where{display:block;font-family:var(--sans);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .stars{color:var(--gold);letter-spacing:.14em}
 
 /* faq */
-.faq details{border-bottom:1px solid var(--hair);padding:var(--s3) 0}
-.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:var(--s3);min-height:44px;align-items:center}
+.faq details{background:var(--paper);border:1px solid var(--hair);border-radius:var(--r);padding:4px 20px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:var(--s3);min-height:56px;align-items:center}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:var(--serif);font-size:1.6rem;color:var(--terracotta);line-height:1}
+.faq summary::after{content:"+";font-family:var(--serif);font-size:1.7rem;color:var(--red);line-height:1}
 .faq details[open] summary::after{content:"–"}
-.faq details p{margin:var(--s2) 0 0;color:var(--muted)}
+.faq details p{margin:0 0 16px;color:var(--muted)}
 
 /* about */
-.about{display:grid;gap:var(--s4);align-items:center}
-.about img{width:100%;max-width:300px;aspect-ratio:4/5;object-fit:cover;border-radius:160px 160px var(--r) var(--r);margin:0 auto}
+.about{display:grid;gap:var(--s5);align-items:center}
+.about .photo{aspect-ratio:4/5;max-width:420px;width:100%;margin:0 auto;border-radius:220px 220px var(--r-lg) var(--r-lg)}
+.signature{font-family:var(--script);font-size:2.6rem;color:var(--red);line-height:1;margin-top:var(--s2)}
 
 /* review markers (preview only) */
 .review{background:#FFF1C9;color:#5A4410;padding:0 4px;border-radius:4px;font-size:.9em}
-.preview-bar{position:sticky;top:0;z-index:60;background:#20180F;color:#F4E9D2;font:600 12px/1.4 var(--sans);padding:8px 14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
+.preview-bar{position:sticky;top:0;z-index:60;background:#1B140D;color:#F4E9D2;font:600 12px/1.4 var(--sans);padding:6px 14px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center}
 .preview-bar a{color:#F4E9D2;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px;border:1px solid rgba(244,233,210,.3);text-decoration:none}
-.preview-bar a[aria-current=true]{background:#F4E9D2;color:#20180F}
+.preview-bar a[aria-current=true]{background:#F4E9D2;color:#1B140D}
 
-footer.site{padding:var(--s6) 0 120px;text-align:center;font-size:.86rem;color:var(--muted);border-top:1px solid var(--hair)}
+footer.site{background:var(--green);color:var(--on-dark-muted);padding:var(--s6) 0 120px;text-align:center;font-size:.88rem}
+footer.site a{color:var(--on-dark);display:inline-flex;min-height:44px;align-items:center}
+footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
 
-[hidden]{display:none!important}
-
-@media (min-width:760px){
-  .quotes{grid-template-columns:repeat(3,1fr)}
-  .about{grid-template-columns:300px 1fr}
-}
+@media (min-width:760px){.quotes{grid-template-columns:repeat(3,1fr)}.about{grid-template-columns:420px 1fr}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-.hero{padding:clamp(40px,8vw,88px) 0 clamp(48px,8vw,96px);text-align:center}
-.hero h1{max-width:18ch;margin:var(--s4) auto var(--s3)}
-.hero .lede{max-width:600px;margin:0 auto var(--s5);font-size:clamp(1.05rem,2.4vw,1.2rem)}
-.signup{max-width:460px;margin:0 auto}
-.signup .fine{font-size:.84rem;margin:var(--s2) 0 0;text-align:center}
-.learn{display:grid;gap:var(--s3);margin-top:var(--s5)}
-.learn .card h3{margin:0 0 6px;color:var(--teal-deep)}
-.learn .card p{margin:0;color:var(--muted)}
-.learn .num{font-family:var(--serif);font-size:2rem;color:var(--terracotta);line-height:1;margin-bottom:6px}
-.split{display:grid;gap:var(--s5);align-items:center}
-.split img{border-radius:var(--r-lg);aspect-ratio:4/3;object-fit:cover;width:100%}
-@media (min-width:760px){.learn{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr 1fr}}
+.hero{padding:clamp(36px,6vw,72px) 0 clamp(56px,8vw,96px);background:radial-gradient(900px 500px at 85% 10%,var(--gold-soft),transparent 60%),var(--cream)}
+.hero-grid{display:grid;gap:var(--s6);align-items:center}
+.hero h1{margin:var(--s3) 0 var(--s3);color:var(--green);font-size:clamp(2.3rem,5.2vw,3.6rem)}
+.hero .lede{font-size:clamp(1.05rem,2.2vw,1.2rem);margin-bottom:var(--s4);max-width:560px}
+.collage{position:relative;min-height:420px}
+.collage .main{position:absolute;inset:0 12% 14% 0;border-radius:var(--r-lg)}
+.collage .p1{position:absolute;right:0;bottom:0;width:46%;transform:rotate(4deg)}
+.collage .p2{position:absolute;left:4%;bottom:-6%;width:34%;transform:rotate(-6deg)}
+.collage .seal{position:absolute;right:6%;top:-18px}
+.learn{display:grid;gap:var(--s4)}
+.lcard{background:var(--paper);color:var(--ink);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.lcard img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.lcard .b{padding:20px 22px 24px}
+.lcard .n{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--red);letter-spacing:.1em}
+.lcard h3{color:var(--green);margin:4px 0 8px}
+.lcard p{margin:0;color:var(--muted);font-size:.96rem}
+.split{display:grid;gap:var(--s6);align-items:center}
+.split .photo{aspect-ratio:4/5}
+.final{text-align:center;position:relative;overflow:hidden}
+@media (min-width:880px){.hero-grid{grid-template-columns:1.05fr .95fr}.collage{min-height:560px}}
+@media (min-width:760px){.learn{grid-template-columns:repeat(4,1fr)}.split{grid-template-columns:.9fr 1.1fr}}
+@media (min-width:560px) and (max-width:759px){.learn{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 <nav class="preview-bar" aria-label="Forhåndsvisning av tilstand">Forhåndsvisning:
   <a href="?state=before" data-state="before">Før 25.11</a><a href="?state=live" data-state="live">25.–26.11</a><a href="?state=closed" data-state="closed">Stengt</a>
 </nav>
+<div class="ribbon-top">
+  <span data-state-show="before">Gratis video · Lanseres onsdag 25.11 kl. 08.00</span>
+  <span data-state-show="live">Videoen er ute · Black Friday til torsdag kl. 23.59</span>
+  <span data-state-show="closed">God advent fra Provence</span>
+</div>
+<header class="site-head"><div class="wrap"><a class="logo" href="#">Eva i <em>Provence</em></a></div></header>
 
-<header class="night hero">
-  <div class="wrap">
-    <svg class="wreath" viewBox="0 0 200 120" aria-hidden="true">
-      <path class="branch" d="M20 92 C55 116 145 116 180 92"/>
-      <g class="leaf"><ellipse cx="46" cy="100" rx="11" ry="3.4" transform="rotate(28 46 100)"/><ellipse cx="74" cy="108" rx="11" ry="3.4" transform="rotate(12 74 108)"/><ellipse cx="128" cy="108" rx="11" ry="3.4" transform="rotate(-12 128 108)"/><ellipse cx="156" cy="100" rx="11" ry="3.4" transform="rotate(-28 156 100)"/></g>
-      <g class="needle"><path d="M60 104l-6-9M64 106l-2-10M138 104l6-9M134 106l2-10M98 110l-4-10M104 110l4-10"/></g>
-      <g class="berry"><circle cx="88" cy="110" r="3"/><circle cx="112" cy="110" r="3"/><circle cx="100" cy="112" r="2.4"/></g>
-      <rect class="candle" x="93" y="52" width="14" height="46" rx="3"/>
-      <path class="flame" d="M100 30c6 8 7 13 7 16a7 7 0 0 1-14 0c0-3 1-8 7-16z"/>
-    </svg>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div data-state-show="before">
+        <span class="badge"><span class="dot"></span>Gratis video · ca. 20 minutter</span>
+        <h1>Fra det første adventslyset til slutten av januar – en vinter <span class="script">uten</span> diett.</h1>
+        <p class="lede muted">I den nye gratisvideoen viser jeg deg hvorfor den norske julemiddagen allerede har hemmeligheten til kvinnene i Provence – og hvordan du bruker den hele mørketiden, gjennom julebord, julaften, romjul og lang januar.</p>
+      </div>
+      <div data-state-show="live">
+        <span class="badge gold"><span class="dot"></span>Videoen er ute · Se den nå</span>
+        <h1>Videoen er ute – meld deg på og se den <span class="script">med en gang</span>.</h1>
+        <p class="lede muted">En vinter med mer overskudd, en hel jul og en januar uten diett. Black Friday-tilbudet er åpent til torsdag 26.11 kl. 23.59.</p>
+      </div>
+      <div data-state-show="closed">
+        <span class="badge green">Avsluttet</span>
+        <h1>Denne runden er over.</h1>
+        <p class="lede muted">Takk for interessen. Jeg ønsker deg en riktig varm adventstid.</p>
+      </div>
 
-    <div data-state-show="before">
-      <span class="badge"><span class="dot"></span>Gratis video · Lanseres onsdag 25.11 kl. 08.00</span>
-      <h1>Fra det første adventslyset til slutten av januar – en vinter med mer overskudd, <span class="script">uten</span> diett.</h1>
-      <p class="lede muted">I den nye gratisvideoen viser jeg deg hvorfor den norske julemiddagen allerede har hemmeligheten til kvinnene i Provence – og hvordan du bruker den hele mørketiden, gjennom julebord, julaften, romjul og lang januar.</p>
-    </div>
-    <div data-state-show="live">
-      <span class="badge solid"><span class="dot"></span>Videoen er ute · Se den nå</span>
-      <h1>Videoen er ute – meld deg på og se den <span class="script">med en gang</span>.</h1>
-      <p class="lede muted">En vinter med mer overskudd, en hel jul og en januar uten diett. Black Friday-tilbudet er åpent til torsdag 26.11 kl. 23.59.</p>
-    </div>
-    <div data-state-show="closed">
-      <span class="badge">Avsluttet</span>
-      <h1>Denne runden er over.</h1>
-      <p class="lede muted">Takk for interessen. Jeg ønsker deg en riktig varm adventstid.</p>
+      <div class="card" data-state-show="before live" id="meld-deg-pa">
+        <!-- Kajabi: erstatt med Kajabi-skjemaet (fornavn, e-post, mobil, SMS-samtykke). -->
+        <form class="form" action="takk.html" method="get" novalidate>
+          <div class="field"><label for="fornavn">Fornavn</label><input id="fornavn" name="fornavn" type="text" autocomplete="given-name" required><span class="err">Skriv fornavnet ditt.</span></div>
+          <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required><span class="err">Skriv en gyldig e-postadresse.</span></div>
+          <div class="field"><label for="mobil">Mobilnummer <span class="opt">(valgfritt)</span></label><input id="mobil" name="mobil" type="tel" autocomplete="tel" inputmode="tel"></div>
+          <label class="check"><input type="checkbox" name="sms"> Send meg påminnelser på SMS (du kan melde deg av når som helst)</label>
+          <button class="btn block" type="submit"><span data-state-show="before">Send meg videoen</span><span data-state-show="live">Se videoen nå</span> →</button>
+          <p class="fine" data-state-show="before">Helt gratis. Videoen sendes til e-posten din onsdag 25.11 kl. 08.00.</p>
+          <p class="fine" data-state-show="live">Helt gratis. Du går rett til videoen.</p>
+        </form>
+      </div>
     </div>
 
-    <div class="signup card" data-state-show="before live" id="meld-deg-pa">
-      <!-- Kajabi: erstatt dette skjemaet med Kajabi-skjemaet (felter: fornavn, e-post, mobil, SMS-samtykke). -->
-      <form class="form" action="takk.html" method="get" novalidate>
-        <div class="field"><label for="fornavn">Fornavn</label><input id="fornavn" name="fornavn" type="text" autocomplete="given-name" required><span class="err">Skriv fornavnet ditt.</span></div>
-        <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required><span class="err">Skriv en gyldig e-postadresse.</span></div>
-        <div class="field"><label for="mobil">Mobilnummer <span class="opt">(valgfritt)</span></label><input id="mobil" name="mobil" type="tel" autocomplete="tel" inputmode="tel"></div>
-        <label class="check"><input type="checkbox" name="sms"> Send meg påminnelser på SMS (du kan melde deg av når som helst)</label>
-        <button class="btn block" type="submit"><span data-state-show="before">Send meg videoen</span><span data-state-show="live">Se videoen nå</span> →</button>
-      </form>
-      <p class="fine muted" data-state-show="before">Helt gratis. Videoen sendes til e-posten din onsdag 25.11 kl. 08.00.</p>
-      <p class="fine muted" data-state-show="live">Helt gratis. Du går rett til videoen.</p>
+    <div class="collage" aria-hidden="true">
+      <div class="photo main"><img src="img/appelsingele.jpg" alt="" width="1400" height="1050"></div>
+      <figure class="polaroid tape p1"><img src="img/linsegryte.jpg" alt=""><figcaption>Vintergryte</figcaption></figure>
+      <figure class="polaroid p2"><img src="img/eva-smil.jpg" alt=""><figcaption>Eva</figcaption></figure>
+      <div class="seal"><b>20</b><span>min video<br>gratis</span></div>
     </div>
   </div>
-</header>
+</section>
 
 <main data-state-show="before live">
-  <section class="sec">
+  <section class="sec red">
     <div class="wrap">
-      <p class="eyebrow center">Dette får du i videoen</p>
-      <h2 class="center narrow">Fire ting du kan bruke allerede denne vinteren</h2>
-      <div class="learn">
-        <article class="card"><div class="num">1</div><h3>Surkål, tyttebær og julesild</h3><p>Hvorfor den norske julen allerede er full av «middelhavsmagi», og hvorfor vi glemmer den resten av vinteren.</p></article>
-        <article class="card"><div class="num">2</div><h3>4 smaksgrep for hver stund i vinter</h3><p>Energifallet klokka 15, julebordet, julekrydderet i hverdagsmaten og romjulen i sofaen.</p></article>
-        <article class="card"><div class="num">3</div><h3>Hvorfor januardietten gir opp først</h3><p>Og hva kvinnene i Provence gjør i stedet.</p></article>
-        <article class="card"><div class="num">4</div><h3>En vintergryte på ca. 25 minutter</h3><p>Varm, billig og noe hele familien spiser.</p></article>
+      <div class="head">
+        <svg class="holly" viewBox="0 0 120 40" aria-hidden="true"><path class="ln" d="M0 20h38M82 20h38"/><path class="lf" d="M60 20c-6-10-16-12-22-8 4 1 6 4 6 7-3 0-6 1-8 3 8 4 18 3 24-2z"/><path class="lf" d="M60 20c6-10 16-12 22-8-4 1-6 4-6 7 3 0 6 1 8 3-8 4-18 3-24-2z"/><circle class="bry" cx="55" cy="24" r="3.4"/><circle class="bry" cx="62" cy="26" r="3.4"/><circle class="bry" cx="59" cy="19" r="3"/></svg>
+        <p class="eyebrow">Dette får du i videoen</p>
+        <h2>Fire ting du kan bruke allerede denne vinteren</h2>
       </div>
+      <div class="learn">
+        <article class="lcard"><img src="img/brie-fiken.jpg" alt="Bakt brie med fiken og pistasj" loading="lazy"><div class="b"><span class="n">01</span><h3>Surkål, tyttebær og julesild</h3><p>Hvorfor den norske julen allerede er full av «middelhavsmagi» – og hvorfor vi glemmer den resten av vinteren.</p></div></article>
+        <article class="lcard"><img src="img/laksebolle.jpg" alt="Fargerik bolle med laks, grønnsaker og sitron" loading="lazy"><div class="b"><span class="n">02</span><h3>4 smaksgrep for hver stund i vinter</h3><p>Energifallet klokka 15, julebordet, julekrydderet i hverdagsmaten og romjulen i sofaen.</p></div></article>
+        <article class="lcard"><img src="img/konfekt.jpg" alt="Hjemmelaget julekonfekt" loading="lazy"><div class="b"><span class="n">03</span><h3>Hvorfor januardietten gir opp først</h3><p>Og hva kvinnene i Provence gjør i stedet.</p></div></article>
+        <article class="lcard"><img src="img/linsegryte.jpg" alt="Vintergryte med linser og urter" loading="lazy"><div class="b"><span class="n">04</span><h3>En vintergryte på ca. 25 minutter</h3><p>Varm, billig og noe hele familien spiser.</p></div></article>
+      </div>
+      <p class="center" style="margin-top:var(--s6)"><a class="btn gold" href="#meld-deg-pa"><span data-state-show="before">Send meg videoen</span><span data-state-show="live">Se videoen nå</span> →</a></p>
     </div>
   </section>
 
-  <section class="sec" style="background:var(--white)">
+  <section class="sec paper">
     <div class="wrap split">
-      <img src="img/vinter-suppe.jpg" alt="Varm vintergryte i en bolle på et dekket bord" loading="lazy" width="900" height="563">
+      <div class="photo"><img src="img/vinter-suppe.jpg" alt="Varm vintermiddag på bordet" loading="lazy"></div>
       <div>
         <p class="eyebrow">Videoen er for deg hvis</p>
+        <h2 style="color:var(--green);margin-bottom:var(--s4)">Kjenner du deg igjen?</h2>
         <ul class="ticks">
           <li>Solen går ned ved tretiden – og energien din går ned sammen med den.</li>
           <li>Desember hos deg er full av julestri: gaver, julevask, baking og middagene til hele familien.</li>
@@ -229,21 +276,31 @@ footer.site{padding:var(--s6) 0 120px;text-align:center;font-size:.86rem;color:v
     </div>
   </section>
 
-  <section class="sec">
-    <div class="wrap narrow about">
-      <img src="img/eva-portrait.jpg" alt="Eva Grefstad Knudsen" loading="lazy" width="467" height="700">
+  <section class="sec linen">
+    <div class="wrap about">
+      <div class="photo"><img src="img/eva-marked.jpg" alt="Eva på markedet i Provence med kurv og blomster" loading="lazy"></div>
       <div>
         <p class="eyebrow">Om Eva</p>
-        <h2>Bonjour fra Provence</h2>
-        <p>Jeg heter Eva. Jeg er norsk, og har bodd i 14 år i Saint Jeannet, en liten landsby i Provence. Her har jeg lært hvordan kvinnene rundt meg spiser – godt, enkelt, og helt uten dietter.</p>
+        <h2 style="color:var(--green)">Bonjour fra Provence</h2>
+        <p style="margin-top:var(--s3)">Jeg heter Eva. Jeg er norsk, og har bodd i 14 år i Saint Jeannet, en liten landsby i Provence. Her har jeg lært hvordan kvinnene rundt meg spiser – godt, enkelt, og helt uten dietter.</p>
         <p>Nå hjelper jeg norske kvinner å ta den måten å spise på inn på sitt eget kjøkken – også de mørkeste dagene i vinter.</p>
-        <a class="btn" href="#meld-deg-pa"><span data-state-show="before">Send meg videoen</span><span data-state-show="live">Se videoen nå</span> →</a>
+        <div class="signature">Eva</div>
       </div>
+    </div>
+  </section>
+
+  <section class="sec pattern final">
+    <div class="wrap narrow">
+      <svg class="holly" viewBox="0 0 120 40" aria-hidden="true"><path class="ln" d="M0 20h38M82 20h38"/><path class="lf" d="M60 20c-6-10-16-12-22-8 4 1 6 4 6 7-3 0-6 1-8 3 8 4 18 3 24-2z"/><path class="lf" d="M60 20c6-10 16-12 22-8-4 1-6 4-6 7 3 0 6 1 8 3-8 4-18 3-24-2z"/><circle class="bry" cx="55" cy="24" r="3.4"/><circle class="bry" cx="62" cy="26" r="3.4"/><circle class="bry" cx="59" cy="19" r="3"/></svg>
+      <h2 style="color:var(--on-dark)">Start vinteren med en ny måte å spise på – <span class="script" style="color:var(--gold-2)">gratis</span>.</h2>
+      <p style="color:var(--on-dark-muted);margin:var(--s3) 0 var(--s5)" data-state-show="before">Videoen kommer onsdag 25.11 kl. 08.00 – bare til dem som har meldt seg på.</p>
+      <p style="color:var(--on-dark-muted);margin:var(--s3) 0 var(--s5)" data-state-show="live">Videoen ligger klar nå.</p>
+      <a class="btn gold" href="#meld-deg-pa"><span data-state-show="before">Send meg videoen</span><span data-state-show="live">Se videoen nå</span> →</a>
     </div>
   </section>
 </main>
 
-<footer class="site"><div class="wrap">Eva i Provence · Saint Jeannet, Frankrike · <a href="mailto:eva@evaiprovence.no">eva@evaiprovence.no</a></div></footer>
+<footer class="site"><div class="wrap"><span class="logo">Eva i Provence</span>Saint Jeannet, Frankrike · <a href="mailto:eva@evaiprovence.no">eva@evaiprovence.no</a></div></footer>
 
 <script>
 // Page state by Oslo time. A ?state=... URL parameter overrides it for previews.
@@ -283,7 +340,7 @@ footer.site{padding:var(--s6) 0 120px;text-align:center;font-size:.86rem;color:v
 (function(){
   var state=EvaState.resolve([{name:'before'},{name:'live',from:'2026-11-25T08:00'},{name:'closed',from:'2026-11-27T00:00'}]);
   EvaState.apply(state);
-  var form=document.querySelector('.signup form');
+  var form=document.querySelector('#meld-deg-pa form');
   if(!form)return;
   form.addEventListener('submit',function(e){
     var ok=true;
