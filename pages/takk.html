@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- Eva i Provence · Black Friday 2026 · Takkeside. Kajabi: lim inn i en Custom Code-blokk. -->
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Takk – du er påmeldt | Eva i Provence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;600&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+:root{
+  --milk:#FDF8EE; --sand:#F3E7CF; --stone:#EADFC6; --white:#FFFFFF;
+  --olive:#56622F; --sage:#A7AE95; --pine:#2F4A3A;
+  --night:#14303B; --night-2:#1C4250; --teal:#246C84; --teal-deep:#1C5568;
+  --terracotta:#B8552A; --terracotta-hover:#9E4520; --gold:#C9A04A; --gold-soft:#E9D3A0;
+  --ink:#33291F; --muted:#665D4E; --on-night:#F7EFDF; --on-night-muted:#CFC3AA;
+  --hair:rgba(51,41,31,.14); --hair-night:rgba(247,239,223,.18);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Hanken Grotesk',-apple-system,'Segoe UI',Roboto,sans-serif;
+  --script:'Sacramento',cursive;
+  --r-sm:10px; --r:16px; --r-lg:22px;
+  --s1:8px; --s2:12px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:72px; --s8:104px;
+  --dur:220ms; --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--milk);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0;letter-spacing:.003em;text-wrap:balance}
+h1{font-size:clamp(2.2rem,7.2vw,3.9rem)}
+h2{font-size:clamp(1.8rem,5vw,2.7rem)}
+h3{font-size:clamp(1.3rem,3.6vw,1.6rem)}
+p{margin:0 0 1em}
+.script{font-family:var(--script);font-weight:400;font-size:1.35em;line-height:.8;color:var(--gold)}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px;margin-left:auto;margin-right:auto}
+.center{text-align:center}
+.muted{color:var(--muted)}
+.eyebrow{font-weight:600;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin:0 0 var(--s2)}
+.sec{padding:clamp(56px,9vw,var(--s8)) 0}
+.sec-tight{padding:clamp(40px,6vw,var(--s7)) 0}
+
+/* night hero */
+.night{background:radial-gradient(900px 500px at 50% -10%,var(--night-2),var(--night) 70%);color:var(--on-night)}
+.night h1,.night h2{color:var(--on-night)}
+.night .eyebrow{color:var(--gold-soft)}
+.night .muted{color:var(--on-night-muted)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold-soft)}
+.badge.solid{background:var(--gold);color:var(--night);border-color:var(--gold)}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+
+/* wreath signature */
+.wreath{display:block;width:clamp(120px,26vw,170px);height:auto;margin:0 auto var(--s4)}
+.wreath .branch{stroke:var(--sage);fill:none;stroke-width:1.3;stroke-linecap:round}
+.wreath .leaf{fill:var(--sage)}
+.wreath .needle{stroke:#5E7D63;stroke-width:1.2;stroke-linecap:round}
+.wreath .berry{fill:var(--terracotta)}
+.wreath .flame{fill:var(--gold);transform-origin:50% 100%;animation:flicker 3.2s ease-in-out infinite}
+.wreath .candle{fill:var(--on-night)}
+@keyframes flicker{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.86) translateY(1px)}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:56px;padding:16px 30px;border-radius:999px;border:0;
+  background:var(--terracotta);color:var(--white);font-family:var(--sans);font-size:1.04rem;font-weight:600;text-decoration:none;cursor:pointer;
+  transition:background var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.btn:hover{background:var(--terracotta-hover)}
+.btn:active{transform:translateY(1px)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.btn.block{width:100%}
+.btn.ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+.btn.ghost:hover{background:var(--teal);color:var(--white)}
+.night .btn.ghost{color:var(--on-night);border-color:var(--hair-night)}
+.btn-note{font-size:.86rem;margin-top:var(--s2)}
+
+/* cards & forms */
+.card{background:var(--white);border:1px solid var(--hair);border-radius:var(--r-lg);padding:clamp(22px,4vw,34px)}
+.night .card{background:rgba(255,255,255,.06);border-color:var(--hair-night)}
+.form{display:grid;gap:var(--s3);text-align:left}
+.field{display:grid;gap:6px}
+.field label{font-size:.9rem;font-weight:600}
+.field .opt{font-weight:400;opacity:.75}
+.field input[type=text],.field input[type=email],.field input[type=tel]{width:100%;min-height:52px;padding:12px 16px;border-radius:var(--r-sm);
+  border:1.5px solid var(--stone);background:var(--white);color:var(--ink);font:inherit;transition:border-color var(--dur)}
+.field input:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px rgba(36,108,132,.2)}
+.field .err{display:none;font-size:.85rem;color:#A13A1B}
+.field.invalid input{border-color:#A13A1B}
+.field.invalid .err{display:block}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--terracotta);flex:none}
+.night .field input{border-color:transparent}
+.night .field label,.night .check{color:var(--on-night)}
+
+/* lists */
+.ticks{list-style:none;padding:0;margin:0;display:grid;gap:var(--s3)}
+.ticks li{display:grid;grid-template-columns:28px 1fr;gap:var(--s2);align-items:start}
+.ticks li::before{content:"";width:22px;height:22px;margin-top:3px;border-radius:50%;background:var(--sand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%236F7C3E' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+
+/* quotes */
+.quotes{display:grid;gap:var(--s3)}
+.quote{background:var(--white);border:1px solid var(--hair);border-radius:var(--r);padding:24px}
+.quote blockquote{margin:0 0 12px;font-family:var(--serif);font-style:italic;font-size:1.2rem;line-height:1.35}
+.quote .who{font-family:var(--serif);font-weight:600;color:var(--teal-deep);font-size:1.15rem}
+.quote .where{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.stars{color:var(--gold);letter-spacing:.14em}
+
+/* faq */
+.faq details{border-bottom:1px solid var(--hair);padding:var(--s3) 0}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:var(--s3);min-height:44px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--serif);font-size:1.6rem;color:var(--terracotta);line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:var(--s2) 0 0;color:var(--muted)}
+
+/* about */
+.about{display:grid;gap:var(--s4);align-items:center}
+.about img{width:100%;max-width:300px;aspect-ratio:4/5;object-fit:cover;border-radius:160px 160px var(--r) var(--r);margin:0 auto}
+
+/* review markers (preview only) */
+.review{background:#FFF1C9;color:#5A4410;padding:0 4px;border-radius:4px;font-size:.9em}
+.preview-bar{position:sticky;top:0;z-index:60;background:#20180F;color:#F4E9D2;font:600 12px/1.4 var(--sans);padding:8px 14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
+.preview-bar a{color:#F4E9D2;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px;border:1px solid rgba(244,233,210,.3);text-decoration:none}
+.preview-bar a[aria-current=true]{background:#F4E9D2;color:#20180F}
+
+footer.site{padding:var(--s6) 0 120px;text-align:center;font-size:.86rem;color:var(--muted);border-top:1px solid var(--hair)}
+
+[hidden]{display:none!important}
+
+@media (min-width:760px){
+  .quotes{grid-template-columns:repeat(3,1fr)}
+  .about{grid-template-columns:300px 1fr}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.thanks{min-height:100vh;display:flex;align-items:center;padding:64px 0}
+.thanks .card{max-width:620px;margin:0 auto;text-align:center}
+.thanks h1{margin:var(--s3) 0}
+.date{display:inline-block;font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);border-top:1px solid var(--hair-night);border-bottom:1px solid var(--hair-night);padding:10px 18px;margin:var(--s2) 0 var(--s4)}
+.tip{text-align:left;background:rgba(255,255,255,.06);border-left:3px solid var(--gold);border-radius:var(--r-sm);padding:16px 18px;margin:var(--s4) 0;color:var(--on-night)}
+.cal{display:flex;flex-wrap:wrap;gap:var(--s2);justify-content:center;margin:var(--s4) 0 var(--s3)}
+</style>
+</head>
+<body class="night">
+<main class="thanks">
+  <div class="wrap">
+    <div class="card">
+      <svg class="wreath" viewBox="0 0 200 120" aria-hidden="true">
+        <path class="branch" d="M20 92 C55 116 145 116 180 92"/>
+        <g class="leaf"><ellipse cx="46" cy="100" rx="11" ry="3.4" transform="rotate(28 46 100)"/><ellipse cx="74" cy="108" rx="11" ry="3.4" transform="rotate(12 74 108)"/><ellipse cx="128" cy="108" rx="11" ry="3.4" transform="rotate(-12 128 108)"/><ellipse cx="156" cy="100" rx="11" ry="3.4" transform="rotate(-28 156 100)"/></g>
+        <g class="berry"><circle cx="88" cy="110" r="3"/><circle cx="112" cy="110" r="3"/></g>
+        <rect class="candle" x="93" y="52" width="14" height="46" rx="3"/>
+        <path class="flame" d="M100 30c6 8 7 13 7 16a7 7 0 0 1-14 0c0-3 1-8 7-16z"/>
+      </svg>
+      <p class="eyebrow">Du er påmeldt</p>
+      <h1>Takk – nå er du <span class="script">påmeldt</span>!</h1>
+      <p class="muted">Videoen kommer til e-posten din</p>
+      <div class="date">onsdag 25.11 kl. 08.00</div>
+      <p class="muted">Melder du deg på etter det tidspunktet, ligger den allerede klar:</p>
+      <a class="btn" href="video.html">Se videoen nå →</a>
+      <div class="tip">Mens du venter, har jeg en liten ting du kan legge merke til denne uken: Når du spiser ribbe eller kjøttkaker, er ikke surkålen og tyttebærene ved siden av bare pynt. Det er det første av de fire grepene jeg skal vise deg.</div>
+      <p class="eyebrow">Legg i kalenderen</p>
+      <div class="cal">
+        <a class="btn ghost" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Evas%20nye%20video&amp;dates=20261125T070000Z/20261125T073000Z&amp;details=Videoen%20kommer%20p%C3%A5%20e-post%20kl.%2008.00">Google</a>
+        <a class="btn ghost" href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0AVERSION%3A2.0%0APRODID%3A-//Eva%20i%20Provence//NO%0ABEGIN%3AVEVENT%0AUID%3Aevas-video-20261125%40evaiprovence.no%0ADTSTAMP%3A20261110T000000Z%0ADTSTART%3A20261125T070000Z%0ADTEND%3A20261125T073000Z%0ASUMMARY%3AEvas%20nye%20video%0ADESCRIPTION%3AVideoen%20kommer%20p%C3%A5%20e-post%20kl.%2008.00%0AEND%3AVEVENT%0AEND%3AVCALENDAR" download="evas-video.ics">Apple / Outlook</a>
+      </div>
+      <p class="muted" style="font-size:.86rem">Ser du ikke e-posten? Sjekk Reklame- eller Søppelpost-mappen, og legg eva@evaiprovence.no til i adresseboken.</p>
+    </div>
+  </div>
+</main>
+</body>
+</html>
