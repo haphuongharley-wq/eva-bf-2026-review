@@ -107,7 +107,21 @@
   "takk-m-2.jpg"
  ],
  "video-before-d": [
-  "video-before-d-1.jpg"
+  "video-before-d-1.jpg",
+  "video-before-d-2.jpg",
+  "video-before-d-3.jpg",
+  "video-before-d-4.jpg",
+  "video-before-d-5.jpg"
+ ],
+ "video-before-m": [
+  "video-before-m-1.jpg",
+  "video-before-m-2.jpg",
+  "video-before-m-3.jpg",
+  "video-before-m-4.jpg",
+  "video-before-m-5.jpg",
+  "video-before-m-6.jpg",
+  "video-before-m-7.jpg",
+  "video-before-m-8.jpg"
  ],
  "video-closed-d": [
   "video-closed-d-1.jpg"
