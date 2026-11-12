@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <!-- Eva i Provence · Black Friday 2026 · Video- og salgsside (én side).
      Tilstand etter norsk tid: before (< 25.11 08.00), day1 (25.11), day2 (26.11), closed (fra 27.11). ?state=... for forhåndsvisning.
-     Kajabi: lim inn i en Custom Code-blokk. Sett inn video-embed, edpay-lenkene i OFFERS og last opp img/*. -->
+     Video først: på day1/day2 ser man bare video, overskrift og knapp. Tilbudet (#tilbud) vises når man trykker på knappen,
+     når lenken har #tilbud (bruk den i e-poster som lenker til tilbudet), eller hvis man har åpnet det før i samme nettleser.
+     Kajabi: lim inn i en Custom Code-blokk. Sett inn video-embed, edpay-lenkene i OFFERS, Q&A-lenkene i QA og last opp img/*. -->
 <html lang="no">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Start før advent – Black Friday | Eva i Provence</title>
-<meta name="description" content="Se Evas nye video og bli med i MiddelhavsMagi til Black Friday-pris, med 3 bonuser og Julegaven fra Provence.">
+<title>Start før advent | Eva i Provence</title>
+<meta name="description" content="Se Evas nye video: mat som gir deg en vinter med mer overskudd, en jul du kan nyte og en januar der du trives i kroppen din.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;600&family=Sacramento&display=swap" rel="stylesheet">
 <style>
@@ -66,11 +68,11 @@ p{margin:0 0 1em}
 .pattern{background-color:var(--green);background-image:radial-gradient(rgba(227,199,126,.16) 1.2px,transparent 1.3px),radial-gradient(rgba(227,199,126,.1) 1.2px,transparent 1.3px);background-size:28px 28px;background-position:0 0,14px 14px}
 
 /* top ribbon (signature) */
-.ribbon-top{background:linear-gradient(90deg,var(--red-deep),var(--red) 30%,var(--red) 70%,var(--red-deep));color:var(--on-dark);text-align:center;font:600 .78rem/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:11px 16px;position:relative}
+.ribbon-top{background:linear-gradient(90deg,var(--red-deep),var(--red) 30%,var(--red) 70%,var(--red-deep));color:var(--on-dark);text-align:center;font:600 clamp(1rem,2.4vw,1.3rem)/1.35 var(--sans);letter-spacing:.06em;padding:18px 16px 20px;position:relative}
 .ribbon-top::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:6px;background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 20px);opacity:.7}
 .site-head{background:var(--paper);border-bottom:1px solid var(--hair)}
-.site-head .wrap{display:flex;align-items:center;justify-content:center;padding:18px 20px}
-.logo{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--green);text-decoration:none;letter-spacing:.01em}
+.site-head .wrap{display:flex;align-items:center;justify-content:center;padding:10px 20px}
+.logo{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--green);text-decoration:none;letter-spacing:.01em}
 .logo em{font-style:normal;color:var(--red)}
 
 /* holly divider */
@@ -160,32 +162,28 @@ p{margin:0 0 1em}
 
 footer.site{background:var(--green);color:var(--on-dark-muted);padding:var(--s6) 0 120px;text-align:center;font-size:.88rem}
 footer.site a{color:var(--on-dark);display:inline-flex;min-height:44px;align-items:center}
-footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
+footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size:1.4rem}
 
 @media (min-width:760px){.quotes{grid-template-columns:repeat(3,1fr)}.about{grid-template-columns:420px 1fr}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-.qa-banner{background:var(--gold);color:var(--green);text-align:center;font-weight:600;padding:12px 16px}
-.qa-banner a{color:var(--green)}
+.qa-banner{background:#E2BF6C;color:#173829;text-align:center;font-weight:600;font-size:clamp(1.05rem,2.4vw,1.25rem);line-height:1.4;padding:16px}
+.qa-banner a{color:#173829;display:inline-block;padding:10px 4px;margin:-10px 0}
 .top{padding:clamp(32px,5vw,60px) 0 clamp(56px,8vw,88px);text-align:center}
 .top h1{max-width:15ch;margin:var(--s3) auto var(--s2)}
-.top .sub{max-width:560px;margin:0 auto var(--s5);color:var(--on-dark-muted)}
+.top .sub{max-width:600px;margin:0 auto var(--s5);color:var(--on-dark-muted);font-size:clamp(1.05rem,2.2vw,1.2rem)}
 .video{position:relative;max-width:900px;margin:0 auto;aspect-ratio:16/9;border-radius:var(--r-lg);overflow:hidden;background:#0d1f18;border:4px solid var(--gold);box-shadow:0 40px 70px -30px rgba(0,0,0,.7)}
 .video img{width:100%;height:100%;object-fit:cover;opacity:.7}
-.video .play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--white);text-align:center;padding:20px;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.5))}
+.video .play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--white);text-align:center;padding:20px;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.55))}
 .video .circle{width:84px;height:84px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(163,32,42,.3)}
-.video .seal{position:absolute;right:16px;top:16px;width:92px;height:92px}
-.video .seal b{font-size:1.3rem}
-.offer{max-width:900px;margin:var(--s5) auto 0;background:var(--paper);color:var(--ink);border-radius:var(--r-lg);padding:clamp(20px,4vw,30px);display:grid;gap:var(--s4);align-items:center;text-align:left;box-shadow:var(--shadow)}
-.price{font-family:var(--serif);line-height:1;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.price s{color:var(--muted);font-size:1.6rem}
-.price b{font-weight:600;font-size:clamp(2.8rem,9vw,3.8rem);color:var(--red)}
-.deadline{font-size:.95rem;color:var(--green);font-weight:600;margin-top:6px}
-.countdown{display:flex;gap:8px;margin-top:var(--s2)}
-.cd{min-width:60px;padding:8px 6px;border-radius:var(--r-sm);background:var(--green);color:var(--on-dark);text-align:center}
-.cd b{display:block;font-family:var(--serif);font-size:1.6rem;line-height:1}
+.countdown{display:flex;gap:8px;justify-content:center}
+.cd{min-width:64px;padding:10px 6px;border-radius:var(--r-sm);background:var(--green);color:var(--on-dark);text-align:center}
+.video .cd{background:rgba(23,56,41,.9);min-width:clamp(58px,12vw,84px)}
+.cd b{display:block;font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.2rem);line-height:1}
 .cd span{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-muted)}
-.pay-note{font-size:.84rem;color:var(--muted);margin-top:var(--s2);text-align:center}
+.after-video{max-width:640px;margin:var(--s5) auto 0;color:var(--on-dark)}
+.after-video h2{color:var(--on-dark);margin-bottom:var(--s4)}
+.after-video p{font-size:1.15rem;margin-bottom:var(--s4)}
 .winter{display:grid;gap:var(--s6);align-items:center}
 .winter .photo{aspect-ratio:4/5}
 .pain{display:grid;gap:var(--s2);padding:0;margin:0;list-style:none}
@@ -197,6 +195,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
 .grip .b{padding:16px 20px 20px}
 .grip .no{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .grip h3{color:var(--red);margin-top:4px}
+.grip p{margin:6px 0 0;font-size:.95rem;color:var(--muted)}
 .mm{display:grid;gap:var(--s6);align-items:center}
 .mm .photo{aspect-ratio:3/2}
 .stack{background:var(--paper);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow)}
@@ -205,10 +204,15 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
 .row .ic{width:56px;height:56px;border-radius:12px;background:var(--red-soft);color:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.5rem;font-weight:600}
 .row .l b{display:block}
 .row .l small{display:block;color:var(--muted);font-size:.88rem;margin-top:2px}
-.row .v{font-family:var(--serif);font-size:1.25rem;color:var(--green);white-space:nowrap}
+.row .v{font-family:var(--serif);font-size:1.25rem;color:var(--green);white-space:nowrap;text-align:right}
+.row .v i{display:block;font-family:var(--sans);font-size:.72rem;color:var(--muted);letter-spacing:.04em}
 .row.total{background:var(--linen);grid-template-columns:1fr auto}
 .row.today{background:var(--red);color:var(--on-dark);border-bottom:0;grid-template-columns:1fr auto}
-.row.today .v{color:var(--on-dark);font-size:2rem;font-weight:600}
+.row.today .v{color:var(--on-dark);font-size:clamp(2rem,6vw,2.6rem);font-weight:600}
+.row.today s{font-size:1.1rem;opacity:.75;margin-right:8px;font-weight:500}
+.buy{background:var(--white);padding:clamp(20px,4vw,28px);text-align:center;display:grid;gap:var(--s3);justify-items:center}
+.deadline{font-size:.98rem;color:var(--green);font-weight:600}
+.pay-note{font-size:.84rem;color:var(--muted);margin:0}
 .gift{display:grid;gap:var(--s5);align-items:center}
 .gift .visual{position:relative;background:var(--white);border-radius:var(--r-lg);padding:16px;box-shadow:var(--shadow)}
 .gift .visual .seal{position:absolute;left:-10px;top:-24px}
@@ -217,13 +221,15 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
 .guarantee{display:grid;gap:var(--s4);align-items:center;justify-items:center;text-align:center;max-width:680px;margin:0 auto}
 .final{text-align:center}
 .final .pack{max-width:420px;margin:0 auto var(--s4);border-radius:var(--r);overflow:hidden;background:var(--white);padding:8px}
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(30,70,54,.97);color:var(--on-dark);padding:10px 16px;transform:translateY(110%);transition:transform var(--dur) var(--ease)}
-.sticky.show{transform:none}
+.plan{list-style:none;padding:0;margin:0 auto var(--s5);display:grid;gap:var(--s3);text-align:left;max-width:560px}
+.plan li{background:rgba(255,255,255,.08);border-left:3px solid var(--gold-2);border-radius:var(--r-sm);padding:14px 18px}
+.plan b{display:block;color:var(--gold-2);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(30,70,54,.97);color:var(--on-dark);padding:10px 16px;transform:translateY(110%);visibility:hidden;transition:transform var(--dur) var(--ease),visibility var(--dur)}
+.sticky.show{transform:none;visibility:visible}
 .sticky .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between}
 .sticky .p{font-family:var(--serif);font-size:1.4rem;white-space:nowrap}
 .sticky .btn{min-height:48px;padding:12px 18px;flex:1;max-width:280px}
 @media (min-width:760px){
-  .offer{grid-template-columns:1fr auto}.pay-note{text-align:left}
   .winter{grid-template-columns:.85fr 1.15fr}.grips{grid-template-columns:repeat(4,1fr)}
   .mm{grid-template-columns:1fr 1fr}.gift{grid-template-columns:1fr 1fr}.guarantee{grid-template-columns:auto 1fr;text-align:left;justify-items:start}
 }
@@ -232,44 +238,45 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
 </head>
 <body>
 <nav class="preview-bar" aria-label="Forhåndsvisning av tilstand">Forhåndsvisning:
-  <a href="?state=before" data-state="before">Før 25.11</a><a href="?state=day1" data-state="day1">Ons 25.11</a><a href="?state=day2" data-state="day2">Tor 26.11</a><a href="?state=closed" data-state="closed">Stengt</a>
+  <a href="?state=before" data-state="before">Før 25.11</a><a href="?state=day1" data-state="day1">Ons 25.11</a><a href="?state=day2" data-state="day2">Tor 26.11</a><a href="?state=day2&amp;qa=replay" data-state="day2-replay">Tor etter Q&amp;A</a><a href="?state=day1#tilbud" data-state="day1-tilbud">Tilbudet åpent</a><a href="?state=closed" data-state="closed">Stengt</a>
 </nav>
-<div class="qa-banner" data-state-show="day2">I kveld kl. 19.00: Eva live – jeg svarer på alle spørsmålene dine. <a href="#zoom-lenke"><span class="review">[lenke til livesendingen: fylles inn]</span></a></div>
+<div class="qa-banner" data-state-show="day2">
+  <span data-qa="live">Live Q&amp;A · I dag kl. 16.00: Jeg svarer på spørsmålene dine live. <a href="#qa-live" data-qa-link="live">Bli med her →</a></span>
+  <span data-qa="replay" hidden>Gikk du glipp av Q&amp;A i dag? <a href="#qa-opptak" data-qa-link="replay">Se opptaket der jeg svarer på spørsmålene deres her →</a></span>
+</div>
 <div class="ribbon-top">
-  <span data-state-show="before">Videoen lanseres onsdag 25.11 kl. 08.00</span>
-  <span data-state-show="day1">Black Friday · Kun i dag · 4.997 kr</span>
-  <span data-state-show="day2">Black Friday · Siste dag · 5.997 kr</span>
+  <span data-state-show="before">Merci! Så gøy at du blir med. Videoen kommer onsdag 25.11 kl. 08.00</span>
+  <span data-state-show="day1">Videoen er ute · Se den nå</span>
+  <span data-state-show="day2">Siste dag · Se videoen før kl. 23.59 i kveld</span>
   <span data-state-show="closed">God advent fra Provence</span>
 </div>
 <header class="site-head"><div class="wrap"><span class="logo">Eva i <em>Provence</em></span></div></header>
 
 <section class="pattern top">
   <div class="wrap">
-    <span class="badge gold" data-state-show="day1"><span class="dot"></span>Black Friday · Kun i dag</span>
-    <span class="badge gold" data-state-show="day2"><span class="dot"></span>Black Friday · Siste dag</span>
-    <span class="badge gold" data-state-show="before"><span class="dot"></span>Kommer onsdag kl. 08.00</span>
     <div data-state-show="before day1 day2">
+      <span class="badge gold" data-state-show="before"><span class="dot"></span>Kommer onsdag kl. 08.00</span>
       <h1 style="color:var(--on-dark)">Start før advent – <span class="script" style="color:var(--gold-2)">ikke</span> 1. januar.</h1>
-      <p class="sub">En vinter med mer overskudd, en hel jul og en januar uten diett.</p>
+      <p class="sub">Mat som gir deg en vinter med mer overskudd, en jul du kan nyte og en januar der du trives i kroppen din.</p>
       <div class="video">
-        <!-- Kajabi: bytt med video-embed. -->
+        <!-- Kajabi: bytt med video-embed på day1/day2. Før 25.11: bytt bildet med et stillbilde fra videoen. -->
         <img src="img/linsegryte.jpg" alt="" aria-hidden="true">
-        <div class="play">
+        <div class="play" data-state-show="before">
+          <strong>Videoen kommer om</strong>
+          <div class="countdown" role="timer" aria-label="Tid igjen til videoen kommer" data-countdown="2026-11-25T08:00"><div class="cd"><b data-cd="d">0</b><span>dager</span></div><div class="cd"><b data-cd="h">00</b><span>timer</span></div><div class="cd"><b data-cd="m">00</b><span>min</span></div><div class="cd"><b data-cd="s">00</b><span>sek</span></div></div>
+        </div>
+        <div class="play" data-state-show="day1 day2">
           <span class="circle" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></span>
-          <strong data-state-show="before">Videoen kommer onsdag 25.11 kl. 08.00</strong>
-          <strong data-state-show="day1 day2">[Video – ca. 20 minutter]</strong>
+          <strong>[Video – ca. 20 minutter]</strong>
         </div>
       </div>
-      <div class="offer" data-state-show="day1 day2">
-        <div>
-          <div class="price"><s>9.997</s><b><span data-state-show="day1">kr 4.997</span><span data-state-show="day2">kr 5.997</span></b></div>
-          <div class="deadline"><span data-state-show="day1">Denne prisen utløper i kveld kl. 23.59. I morgen stiger prisen til 5.997 kr.</span><span data-state-show="day2">Siste dag. Vi stenger i kveld kl. 23.59.</span></div>
-          <div class="countdown" role="timer" aria-label="Tid igjen til kl. 23.59 i kveld"><div class="cd"><b data-cd="h">00</b><span>timer</span></div><div class="cd"><b data-cd="m">00</b><span>min</span></div><div class="cd"><b data-cd="s">00</b><span>sek</span></div></div>
-        </div>
-        <div>
-          <a class="btn block" href="#bli-med" data-buy>Bli med i MiddelhavsMagi →</a>
-          <p class="pay-note">Med 3 bonuser + Julegaven fra Provence (verdi 997 kr)<br>Vipps · Klarna · kort · 14 dagers pengene-tilbake-garanti</p>
-        </div>
+      <div class="after-video" data-state-show="before">
+        <p>Vi sender deg lenken på e-post onsdag morgen!</p>
+        <a class="btn gold" href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-%2F%2FEva%20i%20Provence%2F%2FNO%0D%0ABEGIN%3AVEVENT%0D%0AUID%3Aevas-video-20261125%40evaiprovence.no%0D%0ADTSTAMP%3A20261112T000000Z%0D%0ADTSTART%3A20261125T070000Z%0D%0ADTEND%3A20261125T073000Z%0D%0ASUMMARY%3AEvas%20nye%20video%0D%0ADESCRIPTION%3ALenken%20kommer%20p%C3%A5%20e-post%20kl.%2008.00.%20Sett%20p%C3%A5%20kaffen%21%0D%0AEND%3AVEVENT%0D%0ABEGIN%3AVEVENT%0D%0AUID%3Aevas-qa-20261126%40evaiprovence.no%0D%0ADTSTAMP%3A20261112T000000Z%0D%0ADTSTART%3A20261126T150000Z%0D%0ADTEND%3A20261126T160000Z%0D%0ASUMMARY%3ASp%C3%B8r%20Eva%20live%0D%0ADESCRIPTION%3AEva%20svarer%20p%C3%A5%20sp%C3%B8rsm%C3%A5lene%20dine%20direkte.%20Lenken%20kommer%20p%C3%A5%20e-post.%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR" download="eva-black-friday.ics">Legg til i kalenderen</a>
+      </div>
+      <div class="after-video" data-state-show="day1 day2">
+        <h2>Klar til å starte før advent?</h2>
+        <a class="btn gold" href="#tilbud" data-reveal>Se Black Friday-tilbudet ↓</a>
       </div>
     </div>
     <div data-state-show="closed">
@@ -279,7 +286,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
   </div>
 </section>
 
-<main data-state-show="before day1 day2">
+<main data-state-show="before">
   <section class="sec">
     <div class="wrap winter">
       <div class="photo"><img src="img/appelsingele.jpg" alt="Appelsin, kanel, stjerneanis og rosmarin på et vinterbord" loading="lazy"></div>
@@ -287,11 +294,11 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
         <p class="eyebrow">Kjenner du deg igjen?</p>
         <h2 style="color:var(--green);margin-bottom:var(--s4)">Ser vinteren din slik ut?</h2>
         <ul class="pain">
-          <li><b>Mørketid:</b> solen går ned ved tretiden, energien går med – og hånden finner godteskålen.</li>
-          <li><b>Julestri:</b> gaver, julevask, baking, og det er du som tar deg av middagene til hele familien.</li>
-          <li><b>Julebord:</b> du vil dra og kose deg – men ikke komme hjem tung og trøtt.</li>
-          <li><b>Romjul:</b> sofa, rester, Twist-skålen og en litt flat følelse.</li>
-          <li><b>Lang januar:</b> fortsatt mørkt, lønnen er brukt opp, og en ny diett venter på deg.</li>
+          <li><b>Mørketid:</b> Solen går ned ved tretiden, energien går med, og hånden finner godteskålen.</li>
+          <li><b>Julestri:</b> Gaver, julevask og baking. Du rekker alt for alle andre, og spiser selv stående ved kjøkkenbenken.</li>
+          <li><b>Julebord:</b> Du gleder deg til maten, men ikke til å våkne tung og trøtt dagen etter.</li>
+          <li><b>Romjul:</b> Endelig fri, men kroppen er utladet. Sofa og rester lader deg ikke opp.</li>
+          <li><b>Lang januar:</b> Mørkt, kaldt og tom lommebok, og en følelse av at du må rette opp hele desember.</li>
         </ul>
         <p style="margin-top:var(--s4);font-family:var(--serif);font-size:1.35rem;color:var(--green)">Du gjør ikke noe galt. Du har bare ikke hatt en måte å spise på som er god nok – og varm nok – til å holde hele vinteren.</p>
       </div>
@@ -302,15 +309,15 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
     <div class="wrap">
       <div class="head">
         <svg class="holly" viewBox="0 0 120 40" aria-hidden="true"><path class="ln" d="M0 20h38M82 20h38"/><path class="lf" d="M60 20c-6-10-16-12-22-8 4 1 6 4 6 7-3 0-6 1-8 3 8 4 18 3 24-2z"/><path class="lf" d="M60 20c6-10 16-12 22-8-4 1-6 4-6 7 3 0 6 1 8 3-8 4-18 3-24-2z"/><circle class="bry" cx="55" cy="24" r="3.4"/><circle class="bry" cx="62" cy="26" r="3.4"/><circle class="bry" cx="59" cy="19" r="3"/></svg>
-        <p class="eyebrow">Hemmeligheten</p>
+        <p class="eyebrow">De fire smaksgrepene</p>
         <h2>Hemmeligheten står allerede på bordet ditt i jula</h2>
         <p class="muted">Det visste de som kom før oss. MiddelhavsMagi hjelper deg å bruke de fire grepene hver dag, hele vinteren, hele året – ikke bare julaften.</p>
       </div>
       <div class="grips">
-        <article class="grip"><img src="img/brie-fiken.jpg" alt="" loading="lazy"><div class="b"><span class="no">Surkål · tyttebær</span><h3>Syrlig</h3></div></article>
-        <article class="grip"><img src="img/laksebolle.jpg" alt="" loading="lazy"><div class="b"><span class="no">Julesild · laks</span><h3>Godt fett</h3></div></article>
-        <article class="grip"><img src="img/appelsingele.jpg" alt="" loading="lazy"><div class="b"><span class="no">Kanel · kardemomme</span><h3>Krydder</h3></div></article>
-        <article class="grip"><img src="img/konfekt.jpg" alt="" loading="lazy"><div class="b"><span class="no">Nøtteskålen</span><h3>Tekstur</h3></div></article>
+        <article class="grip"><img src="img/brie-fiken.jpg" alt="" loading="lazy"><div class="b"><span class="no">Surkål · tyttebær</span><h3>Syrlig</h3><p>Gjør tung mat lettere, slik surkålen gjør med ribba.</p></div></article>
+        <article class="grip"><img src="img/laksebolle.jpg" alt="" loading="lazy"><div class="b"><span class="no">Julesild · laks</span><h3>Godt fett</h3><p>Julesild og laks gir smak, metthet og D-vitamin, akkurat når sola er borte.</p></div></article>
+        <article class="grip"><img src="img/appelsingele.jpg" alt="" loading="lazy"><div class="b"><span class="no">Kanel · kardemomme</span><h3>Krydder</h3><p>Gir smak og varme uten at du trenger mer sukker.</p></div></article>
+        <article class="grip"><img src="img/konfekt.jpg" alt="" loading="lazy"><div class="b"><span class="no">Nøtteskålen</span><h3>Tekstur</h3><p>Noe sprøtt gjør at du spiser saktere og nyter mer.</p></div></article>
       </div>
     </div>
   </section>
@@ -320,50 +327,86 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
       <div class="photo"><img class="eva-left" src="img/eva-marked.jpg" alt="Eva handler på markedet i Provence" loading="lazy"></div>
       <div>
         <p class="eyebrow">Hva er MiddelhavsMagi?</p>
-        <h2 style="color:var(--green)">Ikke en diett. Ikke en streng meny.</h2>
-        <p style="margin-top:var(--s3)">Men måten kvinnene i Provence spiser på hver dag – gjort om til enkle steg på et vanlig norsk kjøkken, med varer fra butikken rett i nærheten.</p>
+        <h2 style="color:var(--green)">Ikke en diett.<br>Ikke en streng meny.</h2>
+        <p style="margin-top:var(--s3)">Men måten kvinnene i Provence spiser på hver dag – gjort om til enkle steg på et vanlig norsk kjøkken, med varer fra butikken rett i nærheten. I videoen onsdag viser jeg deg hvordan.</p>
         <div class="signature">Eva</div>
       </div>
     </div>
   </section>
 
+  <section class="sec red final">
+    <div class="wrap narrow">
+      <p class="eyebrow">Start før advent – ikke 1. januar.</p>
+      <h2 style="margin-bottom:var(--s5)">Sett av onsdag morgen</h2>
+      <ul class="plan">
+        <li><b>Onsdag 25.11 kl. 08.00 · Videoen kommer</b>Du får lenken på e-post. Sett på kaffen, så tar jeg deg gjennom de fire smaksgrepene og en vintergryte du kan lage samme kveld.</li>
+        <li><b>Onsdag og torsdag · Black Friday hos meg</b>I to dager åpner jeg MiddelhavsMagi med et eget Black Friday-tilbud. Prisen er lavest på onsdag.</li>
+        <li><b>Torsdag 26.11 kl. 16.00 · Spør meg live</b>Jeg svarer på spørsmålene dine direkte. Rekker du det ikke, får du opptaket samme kveld.</li>
+        <li><b>Torsdag kl. 23.59 · Tilbudet stenger</b>Da er de to dagene over.</li>
+      </ul>
+      <p style="font-family:var(--serif);font-size:1.4rem">Jeg gleder meg til onsdag!</p>
+      <div class="signature" style="color:var(--gold-2);margin-bottom:var(--s5)">Eva</div>
+      <a class="btn gold" href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-%2F%2FEva%20i%20Provence%2F%2FNO%0D%0ABEGIN%3AVEVENT%0D%0AUID%3Aevas-video-20261125%40evaiprovence.no%0D%0ADTSTAMP%3A20261112T000000Z%0D%0ADTSTART%3A20261125T070000Z%0D%0ADTEND%3A20261125T073000Z%0D%0ASUMMARY%3AEvas%20nye%20video%0D%0ADESCRIPTION%3ALenken%20kommer%20p%C3%A5%20e-post%20kl.%2008.00.%20Sett%20p%C3%A5%20kaffen%21%0D%0AEND%3AVEVENT%0D%0ABEGIN%3AVEVENT%0D%0AUID%3Aevas-qa-20261126%40evaiprovence.no%0D%0ADTSTAMP%3A20261112T000000Z%0D%0ADTSTART%3A20261126T150000Z%0D%0ADTEND%3A20261126T160000Z%0D%0ASUMMARY%3ASp%C3%B8r%20Eva%20live%0D%0ADESCRIPTION%3AEva%20svarer%20p%C3%A5%20sp%C3%B8rsm%C3%A5lene%20dine%20direkte.%20Lenken%20kommer%20p%C3%A5%20e-post.%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR" download="eva-black-friday.ics">Legg til i kalenderen</a>
+    </div>
+  </section>
+</main>
+
+<main id="tilbud" data-gate hidden>
   <section class="sec" id="bli-med">
     <div class="wrap narrow">
       <div class="head">
-        <p class="eyebrow">Dette får du</p>
+        <p class="eyebrow">Black Friday-tilbudet</p>
         <h2 style="color:var(--green)">Alt du trenger for vinteren – og hele året</h2>
       </div>
       <div class="stack">
-        <div class="row"><img src="img/linsegryte.jpg" alt=""><span class="l"><b>MiddelhavsMagi – hele kurset · 12 måneder</b><small>10 moduler, 100+ oppskrifter, ukemenyer og ferdige handlelister, steg-for-steg-videoer, 2 livesendinger i måneden, Facebook-gruppe</small></span><span class="v">19.997 kr</span></div>
-        <div class="row"><span class="ic">1</span><span class="l"><b>Bonus · 14 dagers kroppsreset</b><small>En rolig start i romjulen eller tidlig i januar – <em>i stedet for</em> en diett</small></span><span class="v">1.497 kr</span></div>
-        <div class="row"><span class="ic">2</span><span class="l"><b>Bonus · Fra krasj til ro</b><small>Fire grep mot søtsuget, midt i julebrus- og pepperkakesesongen</small></span><span class="v">397 kr</span></div>
-        <div class="row"><span class="ic">3</span><span class="l"><b>Bonus · Kutt matbudsjettet</b><small>Spar 1.000–2.000 kr i måneden uten å ofre smaken, til lang januar</small></span><span class="v">797 kr</span></div>
-        <div class="row"><img src="img/cover-julemagasin.jpg" alt=""><span class="l"><b>Julegaven fra Provence</b><small>Seks digitale julegaver – se under</small></span><span class="v">997 kr</span></div>
+        <div class="row"><img src="img/linsegryte.jpg" alt=""><span class="l"><b>MiddelhavsMagi – hele kurset · 12 måneder</b><small>10 moduler med over 100 oppskrifter, steg-for-steg-videoer, ukemenyer og ferdige handlelister. To livesendinger med meg hver måned, og samhold og oppfølging i egen Facebook-gruppe.</small></span><span class="v"><i>Verdi</i>19.997 kr</span></div>
+        <div class="row"><span class="ic">1</span><span class="l"><b>Bonus · 14 dagers kroppsreset</b><small>En rolig start i romjulen eller tidlig i januar – <em>i stedet for</em> en diett</small></span><span class="v"><i>Verdi</i>1.497 kr</span></div>
+        <div class="row"><span class="ic">2</span><span class="l"><b>Bonus · Fra krasj til ro</b><small>Fire grep mot søtsuget, midt i julebrus- og pepperkakesesongen</small></span><span class="v"><i>Verdi</i>397 kr</span></div>
+        <div class="row"><span class="ic">3</span><span class="l"><b>Bonus · Kutt matutgiftene</b><small>Spar opptil 1.000 kr i måneden – tips du bruker hele året.</small></span><span class="v"><i>Verdi</i>797 kr</span></div>
+        <div class="row"><img src="img/cover-julemagasin.jpg" alt=""><span class="l"><b>Julegaven fra Provence</b><small>Fem digitale hefter med over 70 juleoppskrifter, spiselige gaver og pynt.</small></span><span class="v"><i>Verdi</i>997 kr</span></div>
         <div class="row total"><span class="l"><b>Samlet verdi</b></span><span class="v">23.685 kr</span></div>
-        <div class="row today"><span class="l"><b>Black Friday-pris</b><small style="color:var(--on-dark-muted)" data-state-show="before">Åpner onsdag 25.11 kl. 08.00</small></span><span class="v"><span data-state-show="day1 before">4.997 kr</span><span data-state-show="day2">5.997 kr</span></span></div>
+        <div class="row today"><span class="l"><b><span data-state-show="day1">Black Friday · Lavest pris i dag</span><span data-state-show="day2">Black Friday · Siste dag</span></b></span><span class="v"><s>9.997</s><span data-state-show="day1">4.997 kr</span><span data-state-show="day2">5.997 kr</span></span></div>
+        <div class="buy">
+          <div class="deadline"><span data-state-show="day1">Denne prisen utløper i kveld kl. 23.59. I morgen stiger prisen til 5.997 kr.</span><span data-state-show="day2">Siste dag. Vi stenger i kveld kl. 23.59.</span></div>
+          <div class="countdown" role="timer" aria-label="Tid igjen til kl. 23.59 i kveld" data-countdown="end"><div class="cd"><b data-cd="h">00</b><span>timer</span></div><div class="cd"><b data-cd="m">00</b><span>min</span></div><div class="cd"><b data-cd="s">00</b><span>sek</span></div></div>
+          <a class="btn" href="#bli-med" data-buy>Bli med i MiddelhavsMagi →</a>
+          <p class="pay-note">Vipps · Klarna · kort · 14 dagers pengene-tilbake-garanti</p>
+        </div>
       </div>
-      <p class="center" style="margin-top:var(--s5)" data-state-show="day1 day2"><a class="btn" href="#bli-med" data-buy>Bli med nå →</a></p>
     </div>
   </section>
 
   <section class="sec linen">
     <div class="wrap gift">
       <div class="visual">
-        <img src="img/julegaven-pakke.jpg" alt="Julegaven fra Provence: julemagasin, e-bøker og menyer" loading="lazy">
+        <img src="img/julegaven-pakke.jpg" alt="Julegaven fra Provence: julemagasin og digitale hefter" loading="lazy">
         <div class="seal"><span>Verdi</span><b>997 kr</b><span>gave</span></div>
       </div>
       <div>
         <p class="eyebrow">Julegaven fra Provence</p>
-        <h2 style="color:var(--green)">Hele julegaven – klar til nedlasting med en gang</h2>
-        <p style="margin-top:var(--s3)" class="muted">Blir du med i løpet av de to Black Friday-dagene, får du hele julegaven – akkurat i tide til høytiden:</p>
+        <h2 style="color:var(--green)">All julekosen, bare litt lettere</h2>
+        <p style="margin-top:var(--s3)" class="muted">Blir du med i MiddelhavsMagi i løpet av de to Black Friday-dagene, får du Julegaven fra Provence. Her har jeg samlet hele førjulstida (uten stria) på ett sted, med over 70 nydelige oppskrifter, spiselige gaver og pynt. Samme gode julesmak, med mer av det kroppen blir glad av. Mer kos, mindre stress.</p>
         <ul class="ticks">
-          <li><span><b>Julemagasin</b> – 70 oppskrifter, fra tradisjonelle kaker med en liten vri til fargerike småretter og festlige drinker</span></li>
-          <li><span><b>Spiselige julegaver</b> – lag varme gaver til dem du er glad i</span></li>
-          <li><span><b>Pynt til jul</b> – ideer du kan lage selv, til bordet og hjemmet</span></li>
-          <li><span><b>Restefest</b> – 23 måter å gjøre juleresten om til nye retter, hele romjulen</span></li>
-          <li><span><b>Julemeny fra lille julaften til romjul</b> – med handleliste og oppskriftskort til utskrift</span></li>
+          <li><span><b>Julemagasinet:</b> 70 sunne juleoppskrifter på 75 sider. Fra norske kokosmakroner til fransk bûche de Noël, og fra hjemmelaget surkål til små terter med brie og karamellisert løk.</span></li>
+          <li><span><b>Julegaver til å spise opp:</b> Julegranola, appelsingelé til ostefatet og flere hjemmelagde gaver rett fra kjøkkenet.</span></li>
+          <li><span><b>Pynt til jul:</b> Borddekorasjoner, kranser og bordkort du lager selv, forklart steg for steg.</span></li>
+          <li><span><b>Restefest:</b> 23 nye retter av ribbe, pinnekjøtt, laks og kalkun. Mindre matsvinn og mer igjen i lommeboka.</span></li>
+          <li><span><b>9 steg til sunnere søtsaker:</b> Smarte bytter i de tradisjonelle oppskriftene, så søtsakene får mer smak og næring.</span></li>
         </ul>
+        <p style="margin-top:var(--s3);font-weight:600;color:var(--green)">Klart til nedlasting med en gang du blir med.</p>
         <div class="covers" aria-hidden="true"><img src="img/cover-julemagasin.jpg" alt=""><img src="img/cover-spiselige.jpg" alt=""><img src="img/cover-pynt.jpg" alt=""><img src="img/cover-restefest.jpg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec paper">
+    <div class="wrap mm">
+      <div class="photo"><img class="eva-left" src="img/eva-marked.jpg" alt="Eva handler på markedet i Provence" loading="lazy"></div>
+      <div>
+        <p class="eyebrow">Hva er MiddelhavsMagi?</p>
+        <h2 style="color:var(--green)">Ikke en diett.<br>Ikke en streng meny.</h2>
+        <p style="margin-top:var(--s3)">Men måten kvinnene i Provence spiser på hver dag – gjort om til enkle steg på et vanlig norsk kjøkken, med varer fra butikken rett i nærheten.</p>
+        <div class="signature">Eva</div>
       </div>
     </div>
   </section>
@@ -374,7 +417,10 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
       <div class="quotes">
         <figure class="quote"><span class="stars" aria-label="5 av 5">★★★★★</span><blockquote>«Etter bare noen få uker er magen mindre oppblåst, og jeg har fått mer energi. Akkurat det jeg ønsket meg!»</blockquote><figcaption class="who">Randi</figcaption></figure>
         <figure class="quote"><span class="stars" aria-label="5 av 5">★★★★★</span><blockquote>«Kurset har langt på veg reddet hverdagene mine. Det er utrolig pedagogisk lagt opp. Og alle oppskriftene har falt i smak – selv hos en innbarket gudbrandsdøl.»</blockquote><figcaption class="who">Ann Kjersti N<span class="where">Gudbrandsdalen</span></figcaption></figure>
-        <figure class="quote"><span class="stars" aria-label="5 av 5">★★★★★</span><blockquote>«Allerede nå merker jeg at energien er jevnere og bedre de fleste dagene. De dagene jeg ikke følger opp, sier magen tydelig ifra. Dette kjenner jeg er riktig for meg.»</blockquote><figcaption class="who">Britt</figcaption></figure>
+        <figure class="quote"><span class="stars" aria-label="5 av 5">★★★★★</span><blockquote>«Jeg sto litt fast, og kurset var akkurat det dyttet jeg trengte for å få det til i praksis. Allerede nå merker jeg at energien er jevnere og bedre de fleste dagene.»</blockquote><figcaption class="who">Britt Kristin</figcaption></figure>
+        <figure class="quote"><span class="stars" aria-label="5 av 5">★★★★★</span><blockquote>«Jeg koser meg virkelig på kjøkkenet. Jeg kjenner at denne maten gjør at jeg føler meg lettere, men i tillegg holder den meg mett.»</blockquote><figcaption class="who">Eva V.</figcaption></figure>
+        <figure class="quote"><span class="stars" aria-label="5 av 5">★★★★★</span><blockquote>«Vi lager mer mat sammen og planlegger måltider for flere dager om gangen. Det er slutt på småhandlingen! Jeg har aldri spist så mye grønt som nå, og det er blitt mer gøy å lage mat.»</blockquote><figcaption class="who">Ingunn K.</figcaption></figure>
+        <figure class="quote"><span class="stars" aria-label="5 av 5">★★★★★</span><blockquote>«Takket være deg har jeg fått matgleden tilbake. Nå er oppskrifter blitt like spennende som en krimbok!»</blockquote><figcaption class="who">Tania</figcaption></figure>
       </div>
     </div>
   </section>
@@ -384,7 +430,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
       <div class="seal" style="transform:rotate(-6deg)"><b>14</b><span>dagers<br>garanti</span></div>
       <div>
         <h2 style="color:var(--green)">14 dagers pengene-tilbake-garanti</h2>
-        <p style="margin-top:var(--s2)">Prøv det hjemme i ro og mak. Ombestemmer du deg, sender du en mail til <a href="mailto:eva@evaiprovence.no">eva@evaiprovence.no</a>, og du får alt tilbake. Ingen spørsmål.</p>
+        <p style="margin-top:var(--s2)">Prøv det hjemme i ro og mak. Ombestemmer du deg, sender du en mail til <a href="mailto:eva@evaiprovence.no">eva@evaiprovence.no</a>, og du får pengene tilbake. Ingen spørsmål.</p>
       </div>
     </div>
   </section>
@@ -392,14 +438,14 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
   <section class="sec">
     <div class="wrap narrow faq">
       <div class="head"><p class="eyebrow">Ofte stilte spørsmål</p><h2 style="color:var(--green)">Lurer du på noe?</h2></div>
-      <details><summary>Desember er den travleste måneden i året. Bør jeg starte nå?</summary><p>Nettopp derfor. Du trenger ikke gjøre mer – du legger bare noen små grep til i måltidene du allerede lager. De fleste middagene i kurset er klare på 25–30 minutter, og du har 12 måneder.</p></details>
-      <details><summary>Må jeg gi opp julematen?</summary><p>Nei. Ribbe, pinnekjøtt og «sju slag» – alt blir stående på bordet.</p></details>
-      <details><summary>Kan familien min spise det samme?</summary><p>Ja. Vanlig, god mat som hele familien spiser sammen.</p></details>
-      <details><summary>Jeg er over 60, 70 – er det for sent?</summary><p>Det er aldri for sent å begynne å spise godt, og bedre.</p></details>
-      <details><summary>Jeg har prøvd alt.</summary><p>Da har du prøvd dietter. Dette er ikke en diett: ingen forbud, ingenting å telle.</p></details>
-      <details><summary>Kan jeg dele opp betalingen?</summary><p>Ja, med Klarna. <span class="review">[Beløp per måned: fylles inn]</span></p></details>
-      <details><summary>Hva skjer etter 12 måneder?</summary><p><span class="review">[Eva, bekreft: tilgang etter 12 måneder]</span></p></details>
-      <details><summary>Når får jeg julegaven?</summary><p>Rett etter at du har meldt deg på, på e-post. Du kan laste den ned til og med 31.12.2026.</p></details>
+      <details><summary>Desember er den travleste måneden i året. Bør jeg starte nå?</summary><p>Ja, nettopp derfor. Du trenger ikke gjøre mer – du legger bare til noen små grep i måltidene du allerede lager. De fleste middagene i kurset er klare på 25–35 minutter, og du har tilgang i 12 måneder, så du tar det i ditt tempo.</p></details>
+      <details><summary>Må jeg gi opp julematen?</summary><p>Nei. Ribbe, pinnekjøtt og «sju slag» blir stående på bordet. Du får bare flere farger rundt dem: friske tilbehør, lettere småretter og julekaker med mindre sukker. Da smaker jula like godt, uten at du blir tung etterpå.</p></details>
+      <details><summary>Kan familien min spise det samme?</summary><p>Ja, absolutt. Dette er først og fremst deilig mat, så alle spiser det samme. Ikke bli overrasket om resten av familien begynner å spise mer grønnsaker, helt uten mas. Rett og slett fordi det er godt.</p></details>
+      <details><summary>Jeg er over 60, 70 – er det for sent?</summary><p>Nei. Det er aldri for sent å begynne å spise godt, og bedre. Det du gjør i dag, får betydning for de neste 5, 10 og 20 årene.</p></details>
+      <details><summary>Jeg har prøvd alt.</summary><p>Da har du prøvd dietter. Dette er ikke en diett: ingen forbud, ingenting å telle. Bare god mat du gleder deg til å lage, og til å nyte.</p></details>
+      <details><summary>Kan jeg dele opp betalingen?</summary><p>Ja, med Klarna. Du kan betale innen 30 dager uten ekstra kostnad, eller dele opp i inntil 36 måneder, fra 223 kr i måneden.</p></details>
+      <details><summary>Hva skjer etter 12 måneder?</summary><p>Tilgangen til kurset varer i 12 måneder. Da har du fått alt du trenger for å fortsette på egen hånd. Alle oppskriftene kan du laste ned underveis, så de er dine til odel og eie. Og har du lyst til å fortsette sammen med meg, er du hjertelig velkommen til det.</p></details>
+      <details><summary>Når får jeg julegaven?</summary><p>Rett etter at du har meldt deg på, på e-post. Husk å laste den ned innen 31. desember.</p></details>
     </div>
   </section>
 
@@ -408,11 +454,10 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
       <div class="pack"><img src="img/julegaven-pakke.jpg" alt="" loading="lazy"></div>
       <h2>Start før advent – <span class="script">ikke</span> 1. januar.</h2>
       <p class="muted" style="margin:var(--s3) auto var(--s5);max-width:520px">
-        <span data-state-show="day1">Dagens pris er 4.997 kr – med 3 bonuser og Julegaven fra Provence til 997 kr. Vi stenger i kveld kl. 23.59.</span>
-        <span data-state-show="day2">Dagens pris er 5.997 kr – med 3 bonuser og Julegaven fra Provence til 997 kr. Vi stenger i kveld kl. 23.59.</span>
-        <span data-state-show="before">Black Friday-prisen åpner sammen med videoen onsdag 25.11 kl. 08.00.</span>
+        <span data-state-show="day1">Dagens pris er 4.997 kr – med 3 bonuser og Julegaven fra Provence til en verdi av 997 kr. Tilbudet stenger i kveld kl. 23.59.</span>
+        <span data-state-show="day2">Dagens pris er 5.997 kr – med 3 bonuser og Julegaven fra Provence til en verdi av 997 kr. Tilbudet stenger i kveld kl. 23.59.</span>
       </p>
-      <a class="btn gold" href="#bli-med" data-buy data-state-show="day1 day2">Bli med nå →</a>
+      <a class="btn gold" href="#bli-med" data-buy>Bli med nå →</a>
     </div>
   </section>
 </main>
@@ -457,27 +502,57 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
 })();
 
 (function(){
-  // edpay-lenker per dag — fylles inn når tilbudene er opprettet.
+  // edpay-lenker per dag og Q&A-lenker — fylles inn når de er klare.
   var OFFERS={day1:'#edpay-4997',day2:'#edpay-5997'};
+  var QA={live:'#qa-live',replay:'#qa-opptak',replayFrom:'2026-11-26T17:00'};
+  var params=new URLSearchParams(location.search),preview=params.get('state');
   var state=EvaState.resolve([{name:'before'},{name:'day1',from:'2026-11-25T08:00'},{name:'day2',from:'2026-11-26T00:00'},{name:'closed',from:'2026-11-27T00:00'}]);
   EvaState.apply(state);
   if(OFFERS[state])document.querySelectorAll('[data-buy]').forEach(function(a){a.href=OFFERS[state];});
-  var end={day1:'2026-11-25T23:59',day2:'2026-11-26T23:59'}[state];
-  if(end){
-    var target=EvaState.osloToUtc(end)+59000,preview=new URLSearchParams(location.search).get('state');
-    function p(n){return(n<10?'0':'')+n;}
+
+  // Q&A-banner: live-lenke til kl. 17.00, deretter opptaket.
+  var replay=params.get('qa')==='replay'||(!preview&&Date.now()>=EvaState.osloToUtc(QA.replayFrom));
+  document.querySelector('[data-qa=live]').hidden=replay;
+  document.querySelector('[data-qa=replay]').hidden=!replay;
+  document.querySelector('[data-qa-link=live]').href=QA.live;
+  document.querySelector('[data-qa-link=replay]').href=QA.replay;
+
+  // Nedtellinger: før videoen (til 25.11 08.00) og til 23.59 på tilbudsdagene.
+  var END={day1:'2026-11-25T23:59',day2:'2026-11-26T23:59'};
+  function p(n){return(n<10?'0':'')+n;}
+  document.querySelectorAll('[data-countdown]').forEach(function(el){
+    var at=el.getAttribute('data-countdown');if(at==='end')at=END[state];if(!at)return;
+    var target=EvaState.osloToUtc(at)+(at.slice(-5)==='23:59'?59000:0);
     function tick(){
       var t=Math.max(0,target-Date.now());
-      if(preview&&(t===0||t>86400000))t=(state==='day1'?9:4)*3600000+17*60000+42000; // stable demo value in previews
-      var s=Math.floor(t/1000);
-      document.querySelector('[data-cd=h]').textContent=p(Math.floor(s/3600));
-      document.querySelector('[data-cd=m]').textContent=p(Math.floor(s%3600/60));
-      document.querySelector('[data-cd=s]').textContent=p(s%60);
+      if(preview&&(t===0||(at===END[state]&&t>86400000)))t=((state==='day1'?9:4)*3600+17*60+42)*1000; // stable demo value in previews
+      var s=Math.floor(t/1000),d=el.querySelector('[data-cd=d]'),h=Math.floor(s/3600);
+      if(d){d.textContent=Math.floor(h/24);h%=24;}
+      el.querySelector('[data-cd=h]').textContent=p(h);
+      el.querySelector('[data-cd=m]').textContent=p(Math.floor(s%3600/60));
+      el.querySelector('[data-cd=s]').textContent=p(s%60);
     }
     tick();setInterval(tick,1000);
+  });
+
+  // Video først: tilbudet vises etter klikk, via #tilbud, eller hvis det er åpnet før.
+  var gate=document.querySelector('[data-gate]'),sticky=document.getElementById('sticky'),KEY='eva-bf26-tilbud';
+  if(state!=='day1'&&state!=='day2')return;
+  function seen(){try{return localStorage.getItem(KEY)==='1';}catch(e){return false;}}
+  function reveal(scroll){
+    gate.hidden=false;
+    try{localStorage.setItem(KEY,'1');}catch(e){}
+    if(scroll){
+      var smooth=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.getElementById('bli-med').scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    }
   }
-  var st=document.getElementById('sticky'),top=document.querySelector('.top');
-  window.addEventListener('scroll',function(){st.classList.toggle('show',top.getBoundingClientRect().bottom<0);},{passive:true});
+  var hash=location.hash==='#tilbud'||location.hash==='#bli-med';
+  if(hash||(!preview&&seen()))reveal(hash);
+  document.querySelectorAll('[data-reveal]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();reveal(true);history.replaceState(null,'','#tilbud');});
+  });
+  window.addEventListener('scroll',function(){sticky.classList.toggle('show',!gate.hidden&&gate.getBoundingClientRect().top<0);},{passive:true});
 })();
 </script>
 </body>

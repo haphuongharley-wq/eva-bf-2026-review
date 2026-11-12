@@ -63,11 +63,11 @@ p{margin:0 0 1em}
 .pattern{background-color:var(--green);background-image:radial-gradient(rgba(227,199,126,.16) 1.2px,transparent 1.3px),radial-gradient(rgba(227,199,126,.1) 1.2px,transparent 1.3px);background-size:28px 28px;background-position:0 0,14px 14px}
 
 /* top ribbon (signature) */
-.ribbon-top{background:linear-gradient(90deg,var(--red-deep),var(--red) 30%,var(--red) 70%,var(--red-deep));color:var(--on-dark);text-align:center;font:600 .78rem/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:11px 16px;position:relative}
+.ribbon-top{background:linear-gradient(90deg,var(--red-deep),var(--red) 30%,var(--red) 70%,var(--red-deep));color:var(--on-dark);text-align:center;font:600 clamp(1rem,2.4vw,1.3rem)/1.35 var(--sans);letter-spacing:.06em;padding:18px 16px 20px;position:relative}
 .ribbon-top::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:6px;background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 20px);opacity:.7}
 .site-head{background:var(--paper);border-bottom:1px solid var(--hair)}
-.site-head .wrap{display:flex;align-items:center;justify-content:center;padding:18px 20px}
-.logo{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--green);text-decoration:none;letter-spacing:.01em}
+.site-head .wrap{display:flex;align-items:center;justify-content:center;padding:10px 20px}
+.logo{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--green);text-decoration:none;letter-spacing:.01em}
 .logo em{font-style:normal;color:var(--red)}
 
 /* holly divider */
@@ -157,7 +157,7 @@ p{margin:0 0 1em}
 
 footer.site{background:var(--green);color:var(--on-dark-muted);padding:var(--s6) 0 120px;text-align:center;font-size:.88rem}
 footer.site a{color:var(--on-dark);display:inline-flex;min-height:44px;align-items:center}
-footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
+footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size:1.4rem}
 
 @media (min-width:760px){.quotes{grid-template-columns:repeat(3,1fr)}.about{grid-template-columns:420px 1fr}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -177,7 +177,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
 </style>
 </head>
 <body>
-<div class="ribbon-top">Du er påmeldt · Videoen kommer onsdag 25.11 kl. 08.00</div>
+<div class="ribbon-top">Merci! Så gøy at du blir med. Videoen kommer onsdag 25.11 kl. 08.00</div>
 <header class="site-head"><div class="wrap"><span class="logo">Eva i <em>Provence</em></span></div></header>
 <main class="thanks">
   <div class="wrap grid">
@@ -188,7 +188,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
       <div class="date"><b>onsdag 25.11</b><span>kl. 08.00</span></div>
       <p class="muted">Melder du deg på etter det tidspunktet, ligger den allerede klar:</p>
       <a class="btn" href="video.html">Se videoen nå →</a>
-      <div class="tip">Mens du venter, har jeg en liten ting du kan legge merke til denne uken: Når du spiser ribbe eller kjøttkaker, er ikke surkålen og tyttebærene ved siden av bare pynt. Det er det første av de fire grepene jeg skal vise deg.<div class="signature" style="font-size:2rem">Eva</div></div>
+      <div class="tip">Mens du venter, har jeg en liten ting du kan prøve allerede denne uka: Neste gang du lager kjøttkaker eller en annen kraftig middag – sett tyttebær, surkål eller rødkål på bordet. Det syrlige er ikke bare pynt, det gjør hele måltidet lettere. Det er det første av de fire smaksgrepene jeg skal vise deg.<div class="signature" style="font-size:2rem">Eva</div></div>
       <p class="eyebrow">Legg i kalenderen</p>
       <div class="cal">
         <a class="btn ghost" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Evas%20nye%20video&amp;dates=20261125T070000Z/20261125T073000Z&amp;details=Videoen%20kommer%20p%C3%A5%20e-post%20kl.%2008.00">Google</a>

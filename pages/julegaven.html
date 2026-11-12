@@ -65,11 +65,11 @@ p{margin:0 0 1em}
 .pattern{background-color:var(--green);background-image:radial-gradient(rgba(227,199,126,.16) 1.2px,transparent 1.3px),radial-gradient(rgba(227,199,126,.1) 1.2px,transparent 1.3px);background-size:28px 28px;background-position:0 0,14px 14px}
 
 /* top ribbon (signature) */
-.ribbon-top{background:linear-gradient(90deg,var(--red-deep),var(--red) 30%,var(--red) 70%,var(--red-deep));color:var(--on-dark);text-align:center;font:600 .78rem/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:11px 16px;position:relative}
+.ribbon-top{background:linear-gradient(90deg,var(--red-deep),var(--red) 30%,var(--red) 70%,var(--red-deep));color:var(--on-dark);text-align:center;font:600 clamp(1rem,2.4vw,1.3rem)/1.35 var(--sans);letter-spacing:.06em;padding:18px 16px 20px;position:relative}
 .ribbon-top::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:6px;background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 20px);opacity:.7}
 .site-head{background:var(--paper);border-bottom:1px solid var(--hair)}
-.site-head .wrap{display:flex;align-items:center;justify-content:center;padding:18px 20px}
-.logo{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--green);text-decoration:none;letter-spacing:.01em}
+.site-head .wrap{display:flex;align-items:center;justify-content:center;padding:10px 20px}
+.logo{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--green);text-decoration:none;letter-spacing:.01em}
 .logo em{font-style:normal;color:var(--red)}
 
 /* holly divider */
@@ -159,7 +159,7 @@ p{margin:0 0 1em}
 
 footer.site{background:var(--green);color:var(--on-dark-muted);padding:var(--s6) 0 120px;text-align:center;font-size:.88rem}
 footer.site a{color:var(--on-dark);display:inline-flex;min-height:44px;align-items:center}
-footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
+footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size:1.4rem}
 
 @media (min-width:760px){.quotes{grid-template-columns:repeat(3,1fr)}.about{grid-template-columns:420px 1fr}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -211,9 +211,9 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
 <section class="ghero red">
   <div class="wrap">
     <div>
-      <span class="badge gold"><span class="dot"></span>Seks digitale julegaver</span>
+      <span class="badge gold"><span class="dot"></span>Fem digitale julehefter</span>
       <h1>God jul fra <span class="script">Provence</span></h1>
-      <p class="lede">Julegaven din er klar – oppskrifter, hjemmelagde gaver, pynt og menyer til hele høytiden, fra advent til romjul.</p>
+      <p class="lede">Julegaven din er klar – over 70 juleoppskrifter, hjemmelagde gaver og pynt til hele høytiden, fra advent til romjul.</p>
       <a class="btn gold" href="#apne" data-state-show="locked">Åpne gaven min →</a>
       <a class="btn gold" href="#gaver" data-state-show="unlocked">Til gavene dine →</a>
     </div>
@@ -262,16 +262,16 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
   <section class="sec linen" id="gaver">
     <div class="wrap">
       <p class="success" role="status">Gaven din er åpnet – god fornøyelse! 🎄</p>
-      <div class="head"><p class="eyebrow">Seks gaver til høytiden</p><h2 style="color:var(--green)">Julegaven fra Provence</h2></div>
+      <div class="head"><p class="eyebrow">Fem hefter til høytiden</p><h2 style="color:var(--green)">Julegaven fra Provence</h2></div>
       <div class="gifts">
-        <article class="gcard"><div class="cv"><img src="img/cover-julemagasin.jpg" alt="Forsiden av Julemagasinet" loading="lazy"><span class="lab">70 oppskrifter</span></div><div class="b"><h3>Julemagasin fra Provence</h3><p>Julekaker med en liten vri, fargerike småretter og festlige drinker.</p><span class="meta"><span class="review">[antall sider: fylles inn]</span></span><a class="btn" href="#pdf-julemagasin">Last ned</a></div></article>
-        <article class="gcard"><div class="cv"><img src="img/cover-spiselige.jpg" alt="Forsiden av Spiselige julegaver" loading="lazy"></div><div class="b"><h3>Spiselige julegaver</h3><p>Oppskrifter på gaver du lager selv – gøy å lage og enda gøyere å gi bort.</p><span class="meta"><span class="review">[antall sider: fylles inn]</span></span><a class="btn" href="#pdf-spiselige-gaver">Last ned</a></div></article>
-        <article class="gcard"><div class="cv"><img src="img/cover-pynt.jpg" alt="Forsiden av Pynt til jul" loading="lazy"></div><div class="b"><h3>Pynt til jul</h3><p>Ideer du kan lage selv, til bordet og hjemmet.</p><span class="meta"><span class="review">[antall sider: fylles inn]</span></span><a class="btn" href="#pdf-pynt">Last ned</a></div></article>
-        <article class="gcard"><div class="cv"><img src="img/cover-restefest.jpg" alt="Forsiden av Restefest" loading="lazy"><span class="lab">23 ideer</span></div><div class="b"><h3>Restefest</h3><p>Kreative måter å bruke opp juleresten på, hele romjulen.</p><span class="meta"><span class="review">[antall sider: fylles inn]</span></span><a class="btn" href="#pdf-restefest">Last ned</a></div></article>
-        <article class="gcard"><div class="cv"><img src="img/appelsingele.jpg" alt="Juleretter med appelsin og krydder" loading="lazy"><span class="lab">Julemeny</span></div><div class="b"><h3>Julemeny fra lille julaften til romjul</h3><p>Ferdig plan for høytiden – med handleliste.</p><span class="meta"><span class="review">[antall sider: fylles inn]</span></span><a class="btn" href="#pdf-julemeny">Last ned</a></div></article>
-        <article class="gcard"><div class="cv"><img src="img/konfekt.jpg" alt="Hjemmelaget konfekt" loading="lazy"><span class="lab">Til utskrift</span></div><div class="b"><h3>Oppskriftskort til utskrift</h3><p>Skriv ut favorittene og heng dem på kjøleskapet – eller legg dem i en gavepakke.</p><span class="meta"><span class="review">[antall sider: fylles inn]</span></span><a class="btn" href="#pdf-oppskriftskort">Last ned</a></div></article>
+        <article class="gcard"><div class="cv"><img src="img/cover-julemagasin.jpg" alt="Forsiden av Julemagasinet" loading="lazy"><span class="lab">70 oppskrifter</span></div><div class="b"><h3>Julemagasin fra Provence</h3><p>Julekaker med en liten vri, fargerike småretter og festlige drinker.</p><span class="meta">75 sider</span><a class="btn" href="#pdf-julemagasin">Last ned</a></div></article>
+        <article class="gcard"><div class="cv"><img src="img/cover-spiselige.jpg" alt="Forsiden av Spiselige julegaver" loading="lazy"></div><div class="b"><h3>Spiselige julegaver</h3><p>Oppskrifter på gaver du lager selv – gøy å lage og enda gøyere å gi bort.</p><span class="meta">14 sider</span><a class="btn" href="#pdf-spiselige-gaver">Last ned</a></div></article>
+        <article class="gcard"><div class="cv"><img src="img/cover-pynt.jpg" alt="Forsiden av Pynt til jul" loading="lazy"></div><div class="b"><h3>Pynt til jul</h3><p>Ideer du kan lage selv, til bordet og hjemmet.</p><span class="meta">12 sider</span><a class="btn" href="#pdf-pynt">Last ned</a></div></article>
+        <article class="gcard"><div class="cv"><img src="img/cover-restefest.jpg" alt="Forsiden av Restefest" loading="lazy"><span class="lab">23 ideer</span></div><div class="b"><h3>Restefest</h3><p>Kreative måter å bruke opp juleresten på, hele romjulen.</p><span class="meta">22 sider</span><a class="btn" href="#pdf-restefest">Last ned</a></div></article>
+        <article class="gcard"><div class="cv"><img src="img/konfekt.jpg" alt="Hjemmelagde søtsaker" loading="lazy"><span class="lab">9 steg</span></div><div class="b"><h3>Fra sukkerkick til energiboost</h3><p>En guide med 9 enkle steg som viser hvordan du lager sunne søtsaker fulle av smak og næring.</p><span class="meta">12 sider</span><a class="btn" href="#pdf-sukkerkick">Last ned</a></div></article>
       </div>
       <p class="center" style="margin-top:var(--s5)"><a class="btn ghost" href="#zip-alle">Last ned alt (ZIP)</a></p>
+      <p class="center" style="margin-top:var(--s4);font-weight:600;color:var(--green)">Husk å laste ned julegaven innen 31. desember. Etter nyttår tar jeg ned siden, men alt du har lastet ned, er ditt til odel og eie.</p>
     </div>
   </section>
 
@@ -281,8 +281,8 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px}
       <div>
         <p class="eyebrow">Om MiddelhavsMagi</p>
         <h2>Denne gaven kommer fra MiddelhavsMagi</h2>
-        <p style="margin-top:var(--s3)" class="muted">MiddelhavsMagi er Evas 12 måneder lange kurs for kvinner som vil spise godt, ha overskudd og beholde matgleden – også i de mørkeste månedene av året. 10 moduler, 100+ oppskrifter og to livesendinger i måneden med Eva.</p>
-        <a class="btn gold" href="video.html">Les mer om MiddelhavsMagi →</a>
+        <p style="margin-top:var(--s3)" class="muted">MiddelhavsMagi er kurset mitt for deg som vil spise godt, ha mer overskudd og kjenne deg lett i kroppen, også i de mørkeste månedene. I 12 måneder får du over 100 oppskrifter, steg-for-steg-videoer og to livesendinger med meg hver måned.</p>
+        <a class="btn gold" href="https://challenge.evaiprovence.no/login">Gå til kurset →</a>
       </div>
     </div>
   </section>
