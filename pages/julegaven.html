@@ -247,11 +247,12 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
         <h2 style="color:var(--green)">Åpne gaven din</h2>
       </div>
       <div class="card">
-        <!-- Kajabi: koble til Kajabi-skjema (tagg bf26-gift-unlocked). -->
-        <form class="form" novalidate>
-          <div class="field"><label for="g-navn">Fornavn</label><input id="g-navn" type="text" autocomplete="given-name" required><span class="err">Skriv fornavnet ditt.</span></div>
-          <div class="field"><label for="g-epost">E-post</label><input id="g-epost" type="email" autocomplete="email" required><span class="err">Skriv e-posten du brukte da du meldte deg på.</span></div>
-          <div class="field"><label for="g-mobil">Mobilnummer</label><input id="g-mobil" type="tel" autocomplete="tel" inputmode="tel" required><span class="err">Skriv mobilnummeret ditt.</span></div>
+        <!-- Kajabi form "Julegaven 2026": replace action and the three name="" values with the ones from
+             Kajabi's embed code, and copy any hidden inputs from it here. See docs/gift-unlock-build.md. -->
+        <form class="form" method="post" action="#kajabi-form-action" accept-charset="UTF-8" novalidate>
+          <div class="field"><label for="g-navn">Fornavn</label><input id="g-navn" name="form_submission[name]" type="text" autocomplete="given-name" required><span class="err">Skriv fornavnet ditt.</span></div>
+          <div class="field"><label for="g-epost">E-post</label><input id="g-epost" name="form_submission[email]" type="email" autocomplete="email" required><span class="err">Skriv e-posten du brukte da du meldte deg på.</span></div>
+          <div class="field"><label for="g-mobil">Mobilnummer</label><input id="g-mobil" name="form_submission[phone_number]" type="tel" autocomplete="tel" inputmode="tel" required><span class="err">Skriv mobilnummeret ditt.</span></div>
           <button class="btn block" type="submit">Åpne gaven min 🎁</button>
           <p class="fine">Bruk e-posten du brukte da du meldte deg på. Gaven kan lastes ned til og med 31.12.2026.</p>
         </form>
@@ -323,8 +324,10 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
 })();
 
 (function(){
-  var KEY='eva-julegave-2026',unlocked=false;
-  try{unlocked=localStorage.getItem(KEY)==='1';}catch(e){}
+  // Kajabi redirects back here after the form is saved (?apnet=1#gaver). That return unlocks the gifts.
+  var KEY='eva-julegave-2026',unlocked=false,back=new URLSearchParams(location.search).get('apnet')==='1';
+  if(back){try{localStorage.setItem(KEY,'1');}catch(e){}}
+  try{unlocked=back||localStorage.getItem(KEY)==='1';}catch(e){unlocked=back;}
   var q=new URLSearchParams(location.search).get('state');
   var state=['locked','unlocked','closed'].indexOf(q)>-1?q:(Date.now()>=EvaState.osloToUtc('2027-01-01T00:00')?'closed':(unlocked?'unlocked':'locked'));
   var gifts=document.getElementById('gaver');
@@ -332,9 +335,11 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
   set(state);
   var form=document.querySelector('#apne form');
   form.addEventListener('submit',function(e){
-    e.preventDefault();var ok=true;
+    var ok=true;
     ['g-navn','g-epost','g-mobil'].forEach(function(id){var el=document.getElementById(id),bad=!el.value.trim()||!el.checkValidity();el.parentElement.classList.toggle('invalid',bad);el.setAttribute('aria-invalid',bad);if(bad)ok=false;});
-    if(!ok){var f=form.querySelector('.invalid input');if(f)f.focus();return;}
+    if(!ok){e.preventDefault();var f=form.querySelector('.invalid input');if(f)f.focus();return;}
+    if(form.getAttribute('action').charAt(0)!=='#')return; // real Kajabi form: let it post, Kajabi redirects back
+    e.preventDefault(); // preview without Kajabi: unlock locally
     try{localStorage.setItem(KEY,'1');}catch(err){}
     set('unlocked');gifts.classList.add('opened');gifts.scrollIntoView({behavior:'smooth',block:'start'});
   });
