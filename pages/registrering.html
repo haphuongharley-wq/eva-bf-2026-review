@@ -174,21 +174,21 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
 .collage .p1{position:absolute;right:0;bottom:0;width:46%;transform:rotate(4deg)}
 .collage .p2{position:absolute;left:4%;bottom:-6%;width:34%;transform:rotate(-6deg)}
 .collage .seal{position:absolute;right:6%;top:-18px}
-.learn{display:grid;gap:var(--s4)}
-.lcard{background:var(--paper);color:var(--ink);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
-.lcard img{aspect-ratio:4/3;object-fit:cover;width:100%}
-.lcard .b{padding:20px 22px 24px}
-.lcard .n{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--red);letter-spacing:.1em}
-.lcard h3{color:var(--green);margin:4px 0 8px}
-.lcard p{margin:0;color:var(--muted);font-size:.96rem}
+.grips{display:grid;gap:var(--s4)}
+.grip{background:var(--paper);color:var(--ink);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow)}
+.grip img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.grip .b{padding:16px 20px 20px}
+.grip .no{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.grip h3{color:var(--red);margin-top:4px}
+.grip p{margin:6px 0 0;font-size:.95rem;color:var(--muted)}
 .split{display:grid;gap:var(--s6);align-items:center}
 .split .photo{aspect-ratio:4/5}
 .final{text-align:center;position:relative;overflow:hidden}
 .final .urgent{color:var(--on-dark);font-size:clamp(1.15rem,2.6vw,1.4rem);margin:var(--s3) 0 var(--s5)}
 .final .urgent b{color:var(--gold-2)}
 @media (min-width:880px){.hero-grid{grid-template-columns:1.05fr .95fr}.collage{min-height:560px}}
-@media (min-width:760px){.learn{grid-template-columns:repeat(4,1fr)}.split{grid-template-columns:.9fr 1.1fr}}
-@media (min-width:560px) and (max-width:759px){.learn{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:760px){.grips{grid-template-columns:repeat(4,1fr)}.split{grid-template-columns:.9fr 1.1fr}}
+@media (min-width:560px) and (max-width:759px){.grips{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -207,7 +207,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
     <div>
       <div data-state-show="before">
         <span class="badge"><span class="dot"></span>Gratis video · ca. 20 minutter</span>
-        <h1>Fra det første adventslyset til slutten av januar – mer energi og lett i kroppen, helt <span class="script">uten</span> diett.</h1>
+        <h1>Fra første adventslys til ut januar: mer energi og lettere i kroppen – helt <span class="script">uten</span> diett.</h1>
         <p class="lede muted">Høres det umulig ut midt i julestria? Det trodde jeg også, helt til jeg flyttet til Provence. Her spiser kvinnene godt og nyter maten både til hverdags og til fest, uten å telle eller kutte. I denne gratisvideoen viser jeg deg at hemmeligheten deres allerede står på det norske julebordet, og hvordan du bruker den hele vinteren.</p>
       </div>
       <div data-state-show="live">
@@ -236,8 +236,8 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
     </div>
 
     <div class="collage" aria-hidden="true">
-      <div class="photo main"><img src="img/buche-de-noel.jpg" alt="" width="1000" height="750"></div>
-      <figure class="polaroid tape p1"><img src="img/sjokoladetrofler.jpg" alt=""><figcaption>Julekos</figcaption></figure>
+      <div class="photo main"><img src="img/torsk.jpg" alt="" width="1000" height="750"></div>
+      <figure class="polaroid tape p1"><img src="img/appelsin-gele.jpg" alt=""><figcaption>Julekos</figcaption></figure>
       <figure class="polaroid p2"><img src="img/eva-jul.jpg" alt=""><figcaption>Eva</figcaption></figure>
       <div class="seal"><b>20</b><span>min video<br>gratis</span></div>
     </div>
@@ -252,11 +252,11 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
         <p class="eyebrow">Dette får du i videoen</p>
         <h2>Fire ting du kan bruke allerede denne vinteren</h2>
       </div>
-      <div class="learn">
-        <article class="lcard"><img src="img/brie-fiken.jpg" alt="Bakt brie med fiken og pistasj" loading="lazy"><div class="b"><span class="n">01</span><h3>Hvorfor norsk julemat allerede har det kvinnene i Provence bruker hver dag</h3></div></article>
-        <article class="lcard"><img src="img/laksebolle.jpg" alt="Fargerik bolle med laks, grønnsaker og sitron" loading="lazy"><div class="b"><span class="n">02</span><h3>Fire smaksgrep for hele vinteren</h3><p>Ett mot energifallet klokka tre, ett til julebordet, ett til hverdagsmiddagen og ett til romjula på sofaen.</p></div></article>
-        <article class="lcard"><img src="img/konfekt.jpg" alt="Hjemmelaget julekonfekt" loading="lazy"><div class="b"><span class="n">03</span><h3>Hvorfor nyttårsforsettet sprekker før mars</h3><p>Og hva kvinnene i Provence gjør i stedet.</p></div></article>
-        <article class="lcard"><img src="img/linsegryte.jpg" alt="Vintergryte med linser og urter" loading="lazy"><div class="b"><span class="n">04</span><h3>En vintergryte på 25 minutter</h3><p>Varm, rimelig og noe hele familien spiser. Alle fire smaksgrepene i én gryte.</p></div></article>
+      <div class="grips">
+        <article class="grip"><img src="img/grip-syrlig.jpg" alt="Rødkål og surkål i glass" loading="lazy"><div class="b"><span class="no">Surkål · tyttebær</span><h3>Syrlig</h3><p>Gjør tung mat lettere, slik surkålen gjør med ribba.</p></div></article>
+        <article class="grip"><img src="img/grip-godt-fett.jpg" alt="Laks med dillkrem, granateple og nøtter" loading="lazy"><div class="b"><span class="no">Julesild · laks</span><h3>Godt fett</h3><p>Julesild og laks gir smak, metthet og D-vitamin, akkurat når sola er borte.</p></div></article>
+        <article class="grip"><img src="img/grip-krydder.jpg" alt="Rød mocktail med stjerneanis og kanel" loading="lazy"><div class="b"><span class="no">Kanel · kardemomme</span><h3>Krydder</h3><p>Gir smak og varme uten at du trenger mer sukker.</p></div></article>
+        <article class="grip"><img src="img/grip-tekstur.jpg" alt="Krydrede mandler i glass" loading="lazy"><div class="b"><span class="no">Nøtteskålen</span><h3>Tekstur</h3><p>Noe sprøtt gjør at du spiser saktere og nyter mer.</p></div></article>
       </div>
       <p class="center" style="margin-top:var(--s6)"><a class="btn gold" href="#meld-deg-pa"><span data-state-show="before">Send meg videoen</span><span data-state-show="live">Se videoen nå</span> →</a></p>
     </div>

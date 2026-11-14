@@ -223,6 +223,9 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
 .final .pack{max-width:420px;margin:0 auto var(--s4);border-radius:var(--r);overflow:hidden;background:var(--white);padding:8px}
 .plan{list-style:none;padding:0;margin:0 auto var(--s5);display:grid;gap:var(--s3);text-align:left;max-width:560px}
 .plan li{background:rgba(255,255,255,.08);border-left:3px solid var(--gold-2);border-radius:var(--r-sm);padding:14px 18px}
+.plan li.has-sticker{position:relative;padding-right:118px}
+.sticker{position:absolute;top:-14px;right:-8px;width:104px;height:104px;border-radius:50%;background:var(--gold-2);color:#173829;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--serif);font-weight:700;font-size:.92rem;line-height:1.15;padding:12px;transform:rotate(8deg);box-shadow:0 6px 16px rgba(0,0,0,.25);border:2px dashed rgba(23,56,41,.35);outline:4px solid var(--gold-2)}
+@media (max-width:479px){.plan li.has-sticker{padding-right:18px;padding-top:58px}.sticker{width:auto;height:auto;border-radius:999px;top:-12px;right:10px;padding:8px 14px;font-size:.85rem}}
 .plan b{display:block;color:var(--gold-2);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(30,70,54,.97);color:var(--on-dark);padding:10px 16px;transform:translateY(110%);visibility:hidden;transition:transform var(--dur) var(--ease),visibility var(--dur)}
 .sticky.show{transform:none;visibility:visible}
@@ -340,7 +343,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
       <h2 style="margin-bottom:var(--s5)">Sett av onsdag morgen</h2>
       <ul class="plan">
         <li><b>Onsdag 25.11 kl. 08.00 · Videoen kommer</b>Du får lenken på e-post. Sett på kaffen, så tar jeg deg gjennom de fire smaksgrepene og en vintergryte du kan lage samme kveld.</li>
-        <li><b>Onsdag og torsdag · Black Friday hos meg</b>I to dager åpner jeg MiddelhavsMagi med et eget Black Friday-tilbud. Prisen er lavest på onsdag.</li>
+        <li class="has-sticker"><span class="sticker" aria-hidden="true">+ Julegave fra Provence</span><b>Onsdag og torsdag · Black Friday hos meg</b>I to dager åpner jeg MiddelhavsMagi med et eget Black Friday-tilbud – og en julegave fra Provence på kjøpet. Prisen er lavest på onsdag.</li>
         <li><b>Torsdag 26.11 kl. 16.00 · Spør meg live</b>Jeg svarer på spørsmålene dine direkte. Rekker du det ikke, får du opptaket samme kveld.</li>
         <li><b>Torsdag kl. 23.59 · Tilbudet stenger</b>Da er de to dagene over.</li>
       </ul>
@@ -357,6 +360,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
       <div class="head">
         <p class="eyebrow">Black Friday-tilbudet</p>
         <h2 style="color:var(--green)">Alt du trenger for vinteren – og hele året</h2>
+        <p class="muted" style="margin-top:var(--s3)">Hemmeligheten står allerede på julebordet ditt.<br>I MiddelhavsMagi lærer du å bruke den hver dag, hele året – helt uten diett.</p>
       </div>
       <div class="stack">
         <div class="row"><img src="img/linsegryte.jpg" alt=""><span class="l"><b>MiddelhavsMagi – hele kurset · 12 måneder</b><small>10 moduler med over 100 oppskrifter, steg-for-steg-videoer, ukemenyer og ferdige handlelister. To livesendinger med meg hver måned, og samhold og oppfølging i egen Facebook-gruppe.</small></span><span class="v"><i>Verdi</i>19.997 kr</span></div>
@@ -385,9 +389,9 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
       <div>
         <p class="eyebrow">Julegaven fra Provence</p>
         <h2 style="color:var(--green)">All julekosen, bare litt lettere</h2>
-        <p style="margin-top:var(--s3)" class="muted">Blir du med i MiddelhavsMagi i løpet av de to Black Friday-dagene, får du Julegaven fra Provence. Her har jeg samlet hele førjulstida (uten stria) på ett sted, med over 70 nydelige oppskrifter, spiselige gaver og pynt. Samme gode julesmak, med mer av det kroppen blir glad av. Mer kos, mindre stress.</p>
+        <p style="margin-top:var(--s3)" class="muted">Blir du med i løpet av de to Black Friday-dagene, får du Julegaven fra Provence: fem digitale hefter med hele førjulstida, uten stria. Samme gode julesmak, med mer av det kroppen blir glad av.</p>
         <ul class="ticks">
-          <li><span><b>Julemagasinet:</b> 70 sunne juleoppskrifter på 75 sider. Fra norske kokosmakroner til fransk bûche de Noël, og fra hjemmelaget surkål til små terter med brie og karamellisert løk.</span></li>
+          <li><span><b>Julemagasinet:</b> 70 fargerike juleoppskrifter, fra hjemmelaget rødkål med julekrydder til fransk bûche de Noël.</span></li>
           <li><span><b>Julegaver til å spise opp:</b> Julegranola, appelsingelé til ostefatet og flere hjemmelagde gaver rett fra kjøkkenet.</span></li>
           <li><span><b>Pynt til jul:</b> Borddekorasjoner, kranser og bordkort du lager selv, forklart steg for steg.</span></li>
           <li><span><b>Restefest:</b> 23 nye retter av ribbe, pinnekjøtt, laks og kalkun. Mindre matsvinn og mer igjen i lommeboka.</span></li>
@@ -443,7 +447,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
       <details><summary>Kan familien min spise det samme?</summary><p>Ja, absolutt. Dette er først og fremst deilig mat, så alle spiser det samme. Ikke bli overrasket om resten av familien begynner å spise mer grønnsaker, helt uten mas. Rett og slett fordi det er godt.</p></details>
       <details><summary>Jeg er over 60, 70 – er det for sent?</summary><p>Nei. Det er aldri for sent å begynne å spise godt, og bedre. Det du gjør i dag, får betydning for de neste 5, 10 og 20 årene.</p></details>
       <details><summary>Jeg har prøvd alt.</summary><p>Da har du prøvd dietter. Dette er ikke en diett: ingen forbud, ingenting å telle. Bare god mat du gleder deg til å lage, og til å nyte.</p></details>
-      <details><summary>Kan jeg dele opp betalingen?</summary><p>Ja, med Klarna. Du kan betale innen 30 dager uten ekstra kostnad, eller dele opp i inntil 36 måneder, fra <span data-state-show="day1">268</span><span data-state-show="day2">290</span> kr i måneden.</p></details>
+      <details><summary>Kan jeg dele opp betalingen?</summary><p>Ja, med Klarna. Du kan betale innen 30 dager uten ekstra kostnad, eller dele opp i inntil 36 måneder, fra <span data-state-show="day1">244</span><span data-state-show="day2">290</span> kr i måneden.</p></details>
       <details><summary>Hva skjer etter 12 måneder?</summary><p>Tilgangen til kurset varer i 12 måneder. Da har du fått alt du trenger for å fortsette på egen hånd. Alle oppskriftene kan du laste ned underveis, så de er dine til odel og eie. Og har du lyst til å fortsette sammen med meg, er du hjertelig velkommen til det.</p></details>
       <details><summary>Når får jeg julegaven?</summary><p>Rett etter at du har meldt deg på, på e-post. Husk å laste den ned innen 31. desember.</p></details>
     </div>
