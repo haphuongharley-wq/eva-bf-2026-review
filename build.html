@@ -115,6 +115,7 @@ footer{border-top:1px solid var(--hair);padding:24px 0;color:var(--muted);font-s
 <li>Webinar exclusion: 150 recent webinar registrants tagged <code>bf26-loai-webinar</code>; an automation tags new webinar registrants the same way.</li>
 <li>Segments (evaluated at send time):</li>
 </ul>
+<p>Customer tags excluded from the whole campaign (segments A, B and C): <code>1. MiddelhavsMagi 25 – Tag</code>, <code>1 – Middelhavsmagi 26 – TAG</code>, <code>1 – Middelhavsmagi ALUMNI – TAG</code>.</p>
 <table>
 <thead>
 <tr>
@@ -127,17 +128,17 @@ footer{border-top:1px solid var(--hair);padding:24px 0;color:var(--muted);font-s
 <tr>
 <td>A – Not registered</td>
 <td><code>2148748683</code></td>
-<td>subscribed; none of the tags bf26-registered, bf26-buyer, bf26-loai-webinar, 1.11.26 auto web, 8.11.26 autoweb; no course product</td>
+<td>subscribed; none of the tags bf26-registered, bf26-buyer, bf26-loai-webinar, 1.11.26 auto web, 8.11.26 autoweb, or the three customer tags; no course product</td>
 </tr>
 <tr>
 <td>B – Registered</td>
 <td><code>2148748684</code></td>
-<td>subscribed; tag bf26-registered</td>
+<td>subscribed; tag bf26-registered; none of the three customer tags</td>
 </tr>
 <tr>
 <td>C – Registered, not bought</td>
 <td><code>2148748685</code></td>
-<td>subscribed; tag bf26-registered; no tag bf26-buyer; no course product</td>
+<td>subscribed; tag bf26-registered; no tag bf26-buyer; none of the three customer tags; no course product</td>
 </tr>
 <tr>
 <td>D2 – Bought, gift not opened</td>
@@ -182,7 +183,7 @@ footer{border-top:1px solid var(--hair);padding:24px 0;color:var(--muted);font-s
 <p>For each email:</p>
 <ol>
 <li>Kajabi → Marketing → Email Campaigns → New broadcast → classic editor (not drag-and-drop).</li>
-<li>Recipients: the segment in the table below.</li>
+<li>Recipients: choose the saved segment in the table below (<code>BF26 – A</code>, <code>BF26 – B</code>, <code>BF26 – C</code> or <code>BF26 – D2</code>). Do not add other filters: the segments already exclude buyers, customers and recent webinar registrants, and Kajabi re-evaluates them at send time.</li>
 <li>Subject and preview text: from the email's page.</li>
 <li>Body: switch to HTML and paste the email's Kajabi HTML file.</li>
 <li>Send a test to yourself, check images and buttons, then schedule at the time below.</li>
@@ -193,6 +194,7 @@ footer{border-top:1px solid var(--hair);padding:24px 0;color:var(--muted);font-s
 <th>Email</th>
 <th>Send (Oslo time)</th>
 <th>Segment</th>
+<th>Who receives it</th>
 </tr>
 </thead>
 <tbody>
@@ -200,96 +202,115 @@ footer{border-top:1px solid var(--hair);padding:24px 0;color:var(--muted);font-s
 <td>A1</td>
 <td>Wed 18.11, 08.00</td>
 <td>A</td>
+<td>Segment A: subscribers who have not registered or bought, minus recent webinar registrants and customers</td>
 </tr>
 <tr>
 <td>A2</td>
 <td>Fri 20.11, 19.00</td>
 <td>A</td>
+<td>Segment A: subscribers who have not registered or bought, minus recent webinar registrants and customers</td>
 </tr>
 <tr>
 <td>A2b</td>
 <td>Sat 21.11, 10.00</td>
 <td>A</td>
+<td>Segment A: subscribers who have not registered or bought, minus recent webinar registrants and customers</td>
 </tr>
 <tr>
 <td>B2</td>
 <td>Sat 21.11, 10.00</td>
 <td>B</td>
+<td>Segment B: everyone registered for the video, minus customers</td>
 </tr>
 <tr>
 <td>A3</td>
 <td>Sun 22.11, 18.00</td>
 <td>A</td>
+<td>Segment A: subscribers who have not registered or bought, minus recent webinar registrants and customers</td>
 </tr>
 <tr>
 <td>A4</td>
 <td>Mon 23.11, 08.00</td>
 <td>A</td>
+<td>Segment A: subscribers who have not registered or bought, minus recent webinar registrants and customers</td>
 </tr>
 <tr>
 <td>A5</td>
 <td>Tue 24.11, 18.00</td>
 <td>A</td>
+<td>Segment A: subscribers who have not registered or bought, minus recent webinar registrants and customers</td>
 </tr>
 <tr>
 <td>B3</td>
 <td>Tue 24.11, 18.00</td>
 <td>B</td>
+<td>Segment B: everyone registered for the video, minus customers</td>
 </tr>
 <tr>
 <td>A6</td>
 <td>Wed 25.11, 08.00</td>
 <td>A</td>
+<td>Segment A: subscribers who have not registered or bought, minus recent webinar registrants and customers</td>
 </tr>
 <tr>
 <td>C1</td>
 <td>Wed 25.11, 08.00</td>
 <td>C</td>
+<td>Segment C: registered but not bought, minus customers</td>
 </tr>
 <tr>
 <td>C2</td>
 <td>Wed 25.11, 13.00</td>
 <td>C</td>
+<td>Segment C: registered but not bought, minus customers</td>
 </tr>
 <tr>
 <td>A7</td>
 <td>Wed 25.11, 17.00</td>
 <td>A</td>
+<td>Segment A: subscribers who have not registered or bought, minus recent webinar registrants and customers</td>
 </tr>
 <tr>
 <td>C3</td>
 <td>Wed 25.11, 20.00</td>
 <td>C</td>
+<td>Segment C: registered but not bought, minus customers</td>
 </tr>
 <tr>
 <td>A8</td>
 <td>Thu 26.11, 08.00</td>
 <td>A</td>
+<td>Segment A: subscribers who have not registered or bought, minus recent webinar registrants and customers</td>
 </tr>
 <tr>
 <td>C4</td>
 <td>Thu 26.11, 08.00</td>
 <td>C</td>
+<td>Segment C: registered but not bought, minus customers</td>
 </tr>
 <tr>
 <td>C5</td>
 <td>Thu 26.11, 15.00</td>
 <td>C</td>
+<td>Segment C: registered but not bought, minus customers</td>
 </tr>
 <tr>
 <td>A9</td>
 <td>Thu 26.11, 17.00</td>
 <td>A</td>
+<td>Segment A: subscribers who have not registered or bought, minus recent webinar registrants and customers</td>
 </tr>
 <tr>
 <td>C6</td>
 <td>Thu 26.11, 21.00</td>
 <td>C</td>
+<td>Segment C: registered but not bought, minus customers</td>
 </tr>
 <tr>
 <td>D2</td>
 <td>Sun 13.12 (Lucia)</td>
 <td>D2</td>
+<td>Segment D2: BF buyers who have not opened the gift</td>
 </tr>
 </tbody>
 </table>
