@@ -199,7 +199,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
 .grip p{margin:6px 0 0;font-size:.95rem;color:var(--muted)}
 .mm{display:grid;gap:var(--s6);align-items:center}
 .mm .photo{aspect-ratio:3/2}
-.stack{background:var(--paper);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow)}
+.stack{background:var(--white);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow)}
 .vrow{display:grid;grid-template-columns:56px 1fr auto;gap:16px;padding:16px 20px;border-bottom:1px solid var(--hair);align-items:center}
 .vrow img{width:56px;height:56px;border-radius:12px;object-fit:cover}
 .vrow .ic{width:56px;height:56px;border-radius:12px;background:var(--red-soft);color:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.5rem;font-weight:600}
@@ -263,8 +263,8 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
       <h1 style="color:var(--on-dark)">Start før advent – <span class="script" style="color:var(--gold-2)">ikke</span> 1. januar.</h1>
       <p class="sub">Mat som gir deg en vinter med mer overskudd, en jul du kan nyte og en januar der du trives i kroppen din.</p>
       <div class="video" data-video>
-        <!-- Kajabi: bytt med video-embed på day1/day2. Før 25.11: bytt bildet med et stillbilde fra videoen. -->
-        <img src="img/linsegryte.jpg" alt="" aria-hidden="true">
+        <!-- Kajabi: bytt med video-embed på day1/day2. Før 25.11 vises thumbnail fra videoen. -->
+        <img src="img/vsl-thumbnail.jpg" alt="" aria-hidden="true">
         <div class="play" data-state-show="before">
           <strong>Videoen kommer om</strong>
           <div class="countdown" role="timer" aria-label="Tid igjen til videoen kommer" data-countdown="2026-11-25T08:00"><div class="cd"><b data-cd="d">0</b><span>dager</span></div><div class="cd"><b data-cd="h">00</b><span>timer</span></div><div class="cd"><b data-cd="m">00</b><span>min</span></div><div class="cd"><b data-cd="s">00</b><span>sek</span></div></div>
@@ -543,8 +543,8 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
   });
 
   if((state==='day1'||state==='day2')&&VIDEO.charAt(0)!=='#'){
-    var box=document.querySelector('[data-video]');
-    box.innerHTML='<iframe src="'+VIDEO+'" title="Evas video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+    var box=document.querySelector('[data-video]'),still=box.querySelector('img').src;
+    box.innerHTML='<iframe src="'+VIDEO+'&stillUrl='+encodeURIComponent(still)+'" title="Evas video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
   }
 
   // Video først: tilbudet vises etter klikk, via #tilbud, eller hvis det er åpnet før.
