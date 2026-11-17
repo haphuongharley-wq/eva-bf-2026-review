@@ -93,7 +93,7 @@ p{margin:0 0 1em}
   transition:background var(--dur) var(--ease),transform var(--dur) var(--ease),box-shadow var(--dur)}
 .btn:hover{background:var(--red-deep);transform:translateY(-1px)}
 .btn:active{transform:translateY(1px)}
-.btn.block{width:100%}
+.btn.btn-full{width:100%}
 .btn.gold{background:#E2BF6C;color:#173829;box-shadow:0 10px 22px -12px rgba(120,90,20,.8)}
 .btn.gold:hover{background:var(--gold-2)}
 .btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green);box-shadow:none}
@@ -253,7 +253,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
           <div class="field"><label for="g-navn">Fornavn</label><input id="g-navn" name="form_submission[name]" type="text" autocomplete="given-name" required><span class="err">Skriv fornavnet ditt.</span></div>
           <div class="field"><label for="g-epost">E-post</label><input id="g-epost" name="form_submission[email]" type="email" autocomplete="email" required><span class="err">Skriv e-posten du brukte da du meldte deg på.</span></div>
           <div class="field"><label for="g-mobil">Mobilnummer</label><input id="g-mobil" name="form_submission[phone_number]" type="tel" autocomplete="tel" inputmode="tel" required><span class="err">Skriv mobilnummeret ditt.</span></div>
-          <button class="btn block" type="submit">Åpne gaven min 🎁</button>
+          <button class="btn btn-full" type="submit">Åpne gaven min 🎁</button>
           <p class="fine">Bruk e-posten du brukte da du meldte deg på. Gaven kan lastes ned til og med 31.12.2026.</p>
         </form>
       </div>

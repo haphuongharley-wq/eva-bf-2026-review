@@ -94,7 +94,7 @@ p{margin:0 0 1em}
   transition:background var(--dur) var(--ease),transform var(--dur) var(--ease),box-shadow var(--dur)}
 .btn:hover{background:var(--red-deep);transform:translateY(-1px)}
 .btn:active{transform:translateY(1px)}
-.btn.block{width:100%}
+.btn.btn-full{width:100%}
 .btn.gold{background:#E2BF6C;color:#173829;box-shadow:0 10px 22px -12px rgba(120,90,20,.8)}
 .btn.gold:hover{background:var(--gold-2)}
 .btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green);box-shadow:none}
@@ -206,7 +206,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
   <div class="wrap hero-grid">
     <div>
       <div data-state-show="before">
-        <span class="badge"><span class="dot"></span>Gratis video · ca. 20 minutter</span>
+        <span class="badge"><span class="dot"></span>Gratis video · 16 minutter</span>
         <h1>Fra første adventslys til ut januar: mer energi og lettere i kroppen – helt <span class="script">uten</span> diett.</h1>
         <p class="lede muted">Høres det umulig ut midt i julestria? Det trodde jeg også, helt til jeg flyttet til Provence. Her spiser kvinnene godt og nyter maten både til hverdags og til fest, uten å telle eller kutte. I denne gratisvideoen viser jeg deg at hemmeligheten deres allerede står på det norske julebordet, og hvordan du bruker den hele vinteren.</p>
       </div>
@@ -222,13 +222,12 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
       </div>
 
       <div class="card" data-state-show="before live" id="meld-deg-pa">
-        <!-- Kajabi: erstatt med Kajabi-skjemaet (fornavn, e-post, mobil, SMS-samtykke). -->
+        <!-- Kajabi: erstatt med Kajabi-skjemaet (fornavn, e-post, mobil). -->
         <form class="form" action="takk.html" method="get" novalidate>
           <div class="field"><label for="fornavn">Fornavn</label><input id="fornavn" name="fornavn" type="text" autocomplete="given-name" required><span class="err">Skriv fornavnet ditt.</span></div>
           <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required><span class="err">Skriv en gyldig e-postadresse.</span></div>
-          <div class="field"><label for="mobil">Mobilnummer <span class="opt">(valgfritt)</span></label><input id="mobil" name="mobil" type="tel" autocomplete="tel" inputmode="tel"></div>
-          <label class="check"><input type="checkbox" name="sms"> Send meg påminnelser på SMS (du kan melde deg av når som helst)</label>
-          <button class="btn block" type="submit"><span data-state-show="before">Send meg videoen</span><span data-state-show="live">Se videoen nå</span> →</button>
+          <div class="field"><label for="mobil">Mobilnummer</label><input id="mobil" name="mobil" type="tel" autocomplete="tel" inputmode="tel" pattern="[+0-9 ]{8,}" required><span class="err">Skriv mobilnummeret ditt.</span></div>
+          <button class="btn btn-full" type="submit"><span data-state-show="before">Send meg videoen</span><span data-state-show="live">Se videoen nå</span> →</button>
           <p class="fine" data-state-show="before">Helt gratis. Videoen sendes til e-posten din onsdag 25.11 kl. 08.00.</p>
           <p class="fine" data-state-show="live">Helt gratis. Du går rett til videoen.</p>
         </form>
@@ -239,7 +238,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
       <div class="photo main"><img src="img/torsk.jpg" alt="" width="1000" height="750"></div>
       <figure class="polaroid tape p1"><img src="img/appelsin-gele.jpg" alt=""><figcaption>Julekos</figcaption></figure>
       <figure class="polaroid p2"><img src="img/eva-jul.jpg" alt=""><figcaption>Eva</figcaption></figure>
-      <div class="seal"><b>20</b><span>min video<br>gratis</span></div>
+      <div class="seal"><b>16</b><span>min video<br>gratis</span></div>
     </div>
   </div>
 </section>
@@ -347,7 +346,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
   if(!form)return;
   form.addEventListener('submit',function(e){
     var ok=true;
-    ['fornavn','epost'].forEach(function(id){
+    ['fornavn','epost','mobil'].forEach(function(id){
       var el=document.getElementById(id),bad=!el.value.trim()||!el.checkValidity();
       el.parentElement.classList.toggle('invalid',bad);el.setAttribute('aria-invalid',bad);if(bad)ok=false;
     });
