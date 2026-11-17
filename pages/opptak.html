@@ -211,9 +211,8 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
     <div data-state-show="before replay">
       <span class="badge gold"><span class="dot"></span>Opptak · Live Q&amp;A med Eva</span>
       <h1 style="color:var(--on-dark)">Spørsmål og svar <span class="script" style="color:var(--gold-2)">med</span> Eva</h1>
-      <p class="sub" data-state-show="before">Torsdag 26.11 kl. 16.00 svarer jeg på spørsmålene dine live og deler oppskriften på vintergryta fra videoen. Opptaket legger jeg ut her ca. kl. 17.00, og det ligger ute resten av dagen, til kl. 23.59.</p>
+      <p class="sub" data-state-show="before">Torsdag 26.11 kl. 16.00 svarer jeg på spørsmålene dine live og deler oppskriften på vintergryta – bare for dem som er med live. Opptaket legger jeg ut her ca. kl. 17.00, og det ligger ute resten av dagen, til kl. 23.59.</p>
       <p class="sub" data-state-show="replay">Gikk du glipp av Q&amp;A i dag? Her er opptaket der jeg svarer på spørsmålene deres. Det ligger ute til kl. 23.59 i kveld.</p>
-      <p class="sub" data-recipe hidden><a class="btn ghost" style="color:var(--on-dark);border-color:var(--gold-2)" href="#oppskrift-pdf" target="_blank" rel="noopener">Last ned oppskriften på vintergryta (PDF)</a></p>
       <div class="video" data-video>
         <img src="img/eva-jul.jpg" alt="" aria-hidden="true" style="object-position:50% 35%">
         <div class="play"><strong data-state-show="before">Opptaket kommer torsdag ca. kl. 17.00</strong><strong data-state-show="replay">Opptaket lastes opp nå. Last inn siden igjen om noen minutter.</strong></div>
@@ -301,9 +300,6 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
   var state=EvaState.resolve([{name:'before'},{name:'replay',from:'2026-11-26T17:00'},{name:'closed',from:'2026-11-27T00:00'}]);
   EvaState.apply(state);
 
-  // Oppskriften (PDF) vises under opptaket når lenken er satt.
-  var r=document.querySelector('[data-recipe]'),ra=r.querySelector('a');
-  r.hidden=!(state==='replay'&&ra.getAttribute('href').charAt(0)!=='#');
   if(state==='replay'&&VIDEO.charAt(0)!=='#'){
     document.querySelector('[data-video]').innerHTML='<iframe src="'+VIDEO+'" title="Opptak av Q&amp;A med Eva" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
   }
