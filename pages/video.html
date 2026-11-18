@@ -247,7 +247,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
   <a href="?state=before" data-state="before">Før 25.11</a><a href="?state=day1" data-state="day1">Ons 25.11</a><a href="?state=day2" data-state="day2">Tor 26.11</a><a href="?state=day2&amp;qa=replay" data-state="day2-replay">Tor etter Q&amp;A</a><a href="?state=day1#tilbud" data-state="day1-tilbud">Tilbudet åpent</a><a href="?state=closed" data-state="closed">Stengt</a>
 </nav>
 <div class="qa-banner" data-state-show="day2">
-  <span data-qa="live">Live Q&amp;A · I dag kl. 16.00: Jeg svarer på spørsmålene dine og deler oppskriften på vintergryta – bare live. <a href="#qa-live" data-qa-link="live">Bli med her →</a></span>
+  <span data-qa="live">Live Q&amp;A · I dag kl. 16.00: Jeg svarer på spørsmålene dine og deler oppskriften på vintergryta – bare live. <a href="https://us06web.zoom.us/j/84041204286?pwd=6P6bLEh7gcnbLOXkhfIoyhVQYKSCyG.1" data-qa-link="live">Bli med her →</a></span>
   <span data-qa="replay" hidden>Gikk du glipp av Q&amp;A i dag? <a href="opptak.html" data-qa-link="replay">Se opptaket der jeg svarer på spørsmålene deres her →</a></span>
 </div>
 <div class="ribbon-top">
@@ -513,7 +513,7 @@ footer.site .logo{color:var(--on-dark);display:block;margin-bottom:8px;font-size
   var OFFERS={day1:'#edpay-5997',day2:'#edpay-6498'};
   // Videoen settes inn først fra 25.11 08.00; før det vises stillbildet med nedtelling.
   var VIDEO='https://fast.wistia.net/embed/iframe/1acv4edj3o?seo=false';
-  var QA={live:'#qa-live',replay:'opptak.html',replayFrom:'2026-11-26T17:00'};
+  var QA={live:'https://us06web.zoom.us/j/84041204286?pwd=6P6bLEh7gcnbLOXkhfIoyhVQYKSCyG.1',replay:'opptak.html',replayFrom:'2026-11-26T17:00'};
   var params=new URLSearchParams(location.search),preview=params.get('state');
   var state=EvaState.resolve([{name:'before'},{name:'day1',from:'2026-11-25T08:00'},{name:'day2',from:'2026-11-26T00:00'},{name:'closed',from:'2026-11-27T00:00'}]);
   EvaState.apply(state);
